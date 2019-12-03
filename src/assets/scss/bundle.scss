@@ -1,5 +1,9 @@
 // vendors
 @import "node_modules/bootstrap/scss/bootstrap";
+@import "vendors/wp";
+
+// base
+@import "base/base";
 
 // components
-@import "./components/header";
+@import "components/header";
