@@ -2,8 +2,8 @@
 
 <div class="container">
   <div class="row">
-    <main role="main">
-      <div class="col-md-8">
+    <div class="col-md-<?php echo is_active_sidebar('primary-sidebar') ? '8' : '12'; ?>">
+      <main role="main">
         <?php if(have_posts()) { ?>
           <?php while(have_posts()) { ?>
             <?php the_post(); ?>
@@ -24,17 +24,16 @@
             </article>
           <?php } ?>
           <?php the_posts_pagination(); ?>
-          <!-- Example of a custom hook below. Function is in functions.php -->
-          <!-- Place this anywhere in your theme to trigger an action -->
-          <?php do_action('_themename_after_pagination'); ?>
         <?php } else { ?>
           <p><?php esc_html_e('Sorry, no posts matched your criteria.', '_themename') ?></p>
         <?php } ?>
-      </div>
+      </main>
+    </div>
+    <?php if(is_active_sidebar('primary-sidebar')) { ?>
       <div class="col-md-4">
         <?php get_sidebar(); ?>
       </div>
-    </main>
+    <?php } ?>
   </div>
 </div>
 
