@@ -7,3 +7,11 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<header role="banner" class="mb-4">
+  <div class="container">
+    <div class="logo">
+      <a href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html(bloginfo('name')); ?></a>
+    </div>
+    <?php get_search_form(true); ?>
+  </div>
+</header>
