@@ -14,4 +14,10 @@
     </div>
     <?php get_search_form(true); ?>
   </div>
+
+  <div class="container">
+    <nav role="navigation" aria-label="<?php esc_html_e('Main Navigation', '_themename') ?>">
+      <?php wp_nav_menu(array('theme_location' => 'main-menu')) ?>
+    </nav>
+  </div>
 </header>
