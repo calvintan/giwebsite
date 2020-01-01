@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col-md-8">
       <main role="main">
-        <?php get_template_part('loop', 'single'); ?>
+        <?php get_template_part('loop', 'page'); ?>
       </main>
     </div>
     <div class="col-md-4">
