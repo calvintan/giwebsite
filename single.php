@@ -9,6 +9,7 @@
             <?php the_post(); ?>
             <?php get_template_part('template-parts/post/content'); ?>
             <?php get_template_part('template-parts/single/author'); ?>
+            <?php get_template_part('template-parts/single/navigation'); ?>
           <?php } ?>
         <?php } else { ?>
           <?php get_template_part('template-parts/post/content', 'none'); ?>
