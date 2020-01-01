@@ -13,6 +13,7 @@ import browserSync from "browser-sync";
 import zip from "gulp-zip";
 import replace from "gulp-replace";
 import info from "./package.json";
+import wpPot from "gulp-wp-pot";
 
 const server = browserSync.create();
 const PROD = yargs.argv.prod;
@@ -53,6 +54,18 @@ const paths = {
     ],
     dest: "packaged"
   }
+};
+
+export const pot = () => {
+  return gulp
+    .src("**/*.php")
+    .pipe(
+      wpPot({
+        domain: "_themename",
+        package: info.name
+      })
+    )
+    .pipe(gulp.dest(`languages/${info.name}.pot`));
 };
 
 export const serve = done => {
@@ -147,7 +160,8 @@ export const dev = gulp.series(
 );
 export const build = gulp.series(
   clean,
-  gulp.parallel(styles, scripts, images, others)
+  gulp.parallel(styles, scripts, images, others),
+  pot
 );
 export const bundle = gulp.series(build, compress);
 
