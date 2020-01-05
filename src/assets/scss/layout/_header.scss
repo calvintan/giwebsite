@@ -1,45 +1,7 @@
-$white: #fff;
-$beige: #d9d1c6;
-$brown-fade: rgba(65, 56, 49, 0.8);
-$brown-back: #4a4038;
-$brown-text: #6d6460;
-
 body {
   background-color: $beige;
 }
 
 .navbar {
   background: $brown-fade;
-}
-
-.carousel {
-  &:before {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.2);
-  }
-
-  background: #000 url(../images/gi-bg.jpg) center no-repeat;
-  background-size: cover;
-  color: $white;
-  height: 640px;
-
-  .carousel-inner,
-  .carousel-item,
-  .carousel-content {
-    height: 100%;
-  }
-
-  .carousel-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 36px;
-    line-height: 140%;
-    padding: 0 80px;
-    text-align: left;
-  }
 }
