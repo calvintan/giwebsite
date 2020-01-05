@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div id="carousel-homepage" class="carousel slide mb-5" data-ride="carousel">
+<div id="carousel-homepage" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carousel-homepage" data-slide-to="0" class="active"></li>
     <li data-target="#carousel-homepage" data-slide-to="1"></li>
@@ -41,11 +41,19 @@
   -->
 </div>
 
-<div class="container">
+<div class="container my-5">
   <div class="row">
     <div class="col-md-12">
       <main role="main">
         <?php /* get_template_part('loop', 'page'); */ ?>
+        <div class="lists-homepage">
+          <h2>Projects</h2>
+          <p>Projects goes here</p>
+        </div>
+        <div class="lists-homepage">
+          <h2>Events</h2>
+          <p>Events goes here</p>
+        </div>
       </main>
     </div>
   </div>
