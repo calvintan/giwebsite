@@ -1,0 +1,18 @@
+.footer-homepage {
+  background: $brown-back;
+  color: $beige;
+
+  h4 {
+    font-size: 1rem;
+    line-height: 1.4;
+
+    &:after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 30px;
+      background: $beige;
+      margin: 1rem 0;
+    }
+  }
+}

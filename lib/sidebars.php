@@ -14,4 +14,45 @@ function _themename_sidebar_widgets() {
 
 add_action( 'widgets_init', '_themename_sidebar_widgets' );
 
+function _themename_footer_widgets() {
+
+  register_sidebar( array(
+    'id'            => 'footer_one',
+    'name'          => 'Footer One',
+    'before_widget' => '<section class="footer-area footer-one">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h4>',
+    'after_title'   => '</h4>',
+  ));
+	
+	register_sidebar( array(
+    'id'            => 'footer_two',
+    'name'          => 'Footer Two',
+    'before_widget' => '<section class="footer-area footer-two">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h4>',
+    'after_title'   => '</h4>',
+  ));
+
+  register_sidebar( array(
+    'id'            => 'footer_three',
+    'name'          => 'Footer Three',
+    'before_widget' => '<section class="footer-area footer-three">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h4>',
+    'after_title'   => '</h4>',
+  ));
+
+  register_sidebar( array(
+    'id'            => 'footer_four',
+    'name'          => 'Footer Four',
+    'before_widget' => '<section class="footer-area footer-four">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h4>',
+    'after_title'   => '</h4>',
+  ));
+}
+
+add_action( 'widgets_init', '_themename_footer_widgets' );
+
 ?>
