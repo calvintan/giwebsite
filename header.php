@@ -12,8 +12,8 @@
   </style>
 </head>
 <body <?php body_class(); ?>>
-<header role="banner" class="mb-4">
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" role="navigation">
+<header role="banner">
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top" role="navigation">
     <div class="container">
       <a class="navbar-brand logo" href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html(bloginfo('name')); ?></a>
       <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
