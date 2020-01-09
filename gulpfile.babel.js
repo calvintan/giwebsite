@@ -70,7 +70,7 @@ export const pot = () => {
 
 export const serve = done => {
   server.init({
-    proxy: "http://localhost/sage-test/"
+    proxy: "http://localhost/gi/"
   });
   done();
 };
