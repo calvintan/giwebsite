@@ -3,7 +3,7 @@
     <?php the_post(); ?>
 
     <?php get_template_part( 'template-parts/post/content', get_post_format() ); ?>
-    <?php get_template_part('template-parts/single/author'); ?>
+    <?php /* get_template_part('template-parts/single/author'); */ ?>
     <?php get_template_part( 'template-parts/single/navigation' ); ?>
     
     <?php 
