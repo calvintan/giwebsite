@@ -45,7 +45,7 @@
   <div class="row">
     <div class="col-md-12">
       <main role="main">
-        <?php /* get_template_part('loop', 'page'); */ ?>
+        <?php get_template_part('loop', 'page'); ?>
         <div class="lists-homepage">
           <h2>Projects</h2>
           <p>Projects goes here</p>
