@@ -22,10 +22,11 @@
           <?php the_title();?></a>
       </h2>
     <?php } ?>
-
+      <!--
       <div class="c-post__meta">
         <?php _themename_post_meta(); ?>
       </div>
+      -->
     </header>
 
     <?php if(is_single()) { ?>
