@@ -1,7 +1,14 @@
 .c-post {
+  background-color: $white;
   box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.05);
   padding: 20px;
   overflow: hidden;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
   &.sticky {
     border-left: 5px solid $primary-colour;
   }
@@ -75,10 +82,10 @@
     text-align: center;
   }
   &__excerpt {
-    color: darkgray;
+    color: #495057;
   }
   &__meta {
-    color: darkgray;
+    color: #495057;
   }
   &__title {
     font-weight: 600;

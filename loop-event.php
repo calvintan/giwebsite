@@ -1,17 +1,19 @@
-<?php 
-$args = array( 
-  'post_type' => 'event'
-);
-$the_query = new WP_Query( $args ); 
-?>
+<?php if(have_posts()) { ?>
+  <?php while(have_posts()) { ?>
+    <?php the_post(); ?>
 
-<?php if($the_query->have_posts()) { ?>
-  <?php while($the_query->have_posts()) { ?>
-    <?php $the_query->the_post(); ?>
-    <?php get_template_part('template-parts/post/content', 'event'); ?>
+    <?php get_template_part( 'template-parts/post/content', 'event' ); ?>
+
+    <?php /* get_template_part('template-parts/single/author'); */ ?>
+    
+    <?php get_template_part( 'template-parts/single/navigation' ); ?>
+    
+    <?php 
+    if( comments_open() || get_comments_number()) {
+        comments_template();
+    }
+    ?>
   <?php } ?>
-  <?php the_posts_pagination(); ?>
-  <?php wp_reset_postdata(); ?>
 <?php } else { ?>
-  <?php get_template_part('template-parts/post/content', 'none'); ?>
+  <?php get_template_part( 'template-parts/post/content', 'none' ); ?>
 <?php } ?>
