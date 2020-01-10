@@ -18,7 +18,7 @@ function _themename_readmore_link() {
   /* translators: %s: Post Title */
   printf(
     wp_kses(
-      __('Read More <span class="u-screen-reader-text">About %s</span>', '_themename'),
+      __('Read More', '_themename'),
       [
         'span' => [
           'class' => []
