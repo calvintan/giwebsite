@@ -5,21 +5,3 @@ body {
 .navbar {
   background: $brown-fade;
 }
-
-.lists-homepage {
-  margin-bottom: 3rem;
-
-  h2 {
-    font-size: 1rem;
-    text-transform: uppercase;
-
-    &:after {
-      content: "";
-      display: block;
-      height: 1px;
-      width: 30px;
-      background: $black;
-      margin: 1rem 0;
-    }
-  }
-}

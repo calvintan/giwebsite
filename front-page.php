@@ -29,16 +29,6 @@
       </div>
     </div>
   </div>
-  <!--
-  <a class="carousel-control-prev" href="#carousel-homepage" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carousel-homepage" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-  -->
 </div>
 
 <div class="container my-5">
@@ -51,34 +41,36 @@
           $project_exists = post_type_exists( 'project' );
         ?>
         <div class="lists-homepage">
-          <?php if($event_exists) { ?>
-            <h2>Latest Events</h2>
-            <?php 
-              $args = array( 
-                'post_type' => 'event',
-                'posts_per_page' => 4,
-                'order' => 'DESC',
-                'orderby' => 'date' 
-              );
-              $the_query = new WP_Query( $args ); 
-            ?>
-
-            <?php if($the_query->have_posts()) { ?>
-              <?php while($the_query->have_posts()) { ?>
-                <?php $the_query->the_post(); ?>
-                <?php get_template_part('template-parts/post/content', 'event'); ?>
+          <h2>Events</h2>
+          <div class="lists-wrapper">
+            <?php if($event_exists) { ?>
+              <?php 
+                $args = array( 
+                  'post_type' => 'event',
+                  'posts_per_page' => 4,
+                  'order' => 'DESC',
+                  'orderby' => 'date' 
+                );
+                $the_query = new WP_Query( $args ); 
+              ?>
+  
+              <?php if($the_query->have_posts()) { ?>
+                <?php while($the_query->have_posts()) { ?>
+                  <?php $the_query->the_post(); ?>
+                  <?php get_template_part('template-parts/page/content', 'list'); ?>
+                <?php } ?>
+                <?php the_posts_pagination(); ?>
+                <?php wp_reset_postdata(); ?>
+              <?php } else { ?>
+                <?php get_template_part('template-parts/post/content', 'none'); ?>
               <?php } ?>
-              <?php the_posts_pagination(); ?>
-              <?php wp_reset_postdata(); ?>
-            <?php } else { ?>
-              <?php get_template_part('template-parts/post/content', 'none'); ?>
             <?php } ?>
-            <a href="<?php echo home_url() ?>/events">View All Events</a>
-          <?php } ?>
+          </div>
+          <a class="lists-link" href="<?php echo home_url() ?>/events">View All Events</a>
         </div>
         <div class="lists-homepage">
           <?php if($project_exists) { ?>
-          <h2>Latest Projects</h2>
+          <h2>Projects</h2>
           <p>Projects goes here</p>
           <?php } ?>
         </div>
