@@ -48,8 +48,9 @@
                 $args = array( 
                   'post_type' => 'event',
                   'posts_per_page' => 4,
-                  'order' => 'DESC',
-                  'orderby' => 'date' 
+                  'meta_key'  => 'event_date',
+                  'orderby' => 'meta_value_num', 
+                  'order' => 'DESC'
                 );
                 $the_query = new WP_Query( $args ); 
               ?>

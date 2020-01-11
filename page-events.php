@@ -6,7 +6,10 @@
       <main role="main">
         <?php 
           $args = array( 
-            'post_type' => 'event'
+            'post_type' => 'event',
+            'meta_key'  => 'event_date',
+            'orderby' => 'meta_value_num', 
+            'order' => 'DESC'
           );
           $the_query = new WP_Query( $args ); 
         ?>
