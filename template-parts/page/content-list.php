@@ -8,12 +8,14 @@
           <?php the_title();?></a>
     <?php echo '</div>'; ?>
   <?php } ?>
-  <?php 
-    $date_string = get_field('event_date');
-    $date = DateTime::createFromFormat('d/m/Y', $date_string);
-  ?>
-  <div class="lists-date mt-2">
-    <p><?php echo $date->format('l'); ?></p>
-    <p><?php echo $date->format('j M Y'); ?></p>
-  </div>
+  <?php if ('event' == get_post_type()) { ?>
+    <?php
+      $date_string = get_field('event_date');
+      $date = DateTime::createFromFormat('d/m/Y', $date_string);
+    ?>
+    <div class="lists-date mt-2">
+      <p><?php echo $date->format('l'); ?></p>
+      <p><?php echo $date->format('j M Y'); ?></p>
+    </div>
+  <?php } ?>
 </aside>
