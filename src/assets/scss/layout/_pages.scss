@@ -1,0 +1,15 @@
+.page {
+  .page__title {
+    font-size: 1rem;
+    text-transform: uppercase;
+
+    &:after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 35px;
+      background: $black;
+      margin: 1rem 0;
+    }
+  }
+}
