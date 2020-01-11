@@ -39,40 +39,65 @@
         <?php
           $event_exists = post_type_exists( 'event' );
           $project_exists = post_type_exists( 'project' );
+          $event_count = wp_count_posts('event') -> publish;
+          $project_count = wp_count_posts('project') -> publish;
         ?>
         <div class="lists-homepage">
+          <?php if($event_exists && $event_count > 0) { ?>
           <h2>Events</h2>
           <div class="lists-wrapper">
-            <?php if($event_exists) { ?>
-              <?php 
-                $args = array( 
-                  'post_type' => 'event',
-                  'posts_per_page' => 4,
-                  'meta_key'  => 'event_date',
-                  'orderby' => 'meta_value_num', 
-                  'order' => 'DESC'
-                );
-                $the_query = new WP_Query( $args ); 
-              ?>
-  
-              <?php if($the_query->have_posts()) { ?>
-                <?php while($the_query->have_posts()) { ?>
-                  <?php $the_query->the_post(); ?>
-                  <?php get_template_part('template-parts/page/content', 'list'); ?>
-                <?php } ?>
-                <?php the_posts_pagination(); ?>
-                <?php wp_reset_postdata(); ?>
-              <?php } else { ?>
-                <?php get_template_part('template-parts/post/content', 'none'); ?>
+            <?php
+              $args = array(
+                'post_type' => 'event',
+                'posts_per_page' => 4,
+                'meta_key'  => 'event_date',
+                'orderby' => 'meta_value_num',
+                'order' => 'DESC'
+              );
+              $the_query = new WP_Query( $args );
+            ?>
+
+            <?php if($the_query->have_posts()) { ?>
+              <?php while($the_query->have_posts()) { ?>
+                <?php $the_query->the_post(); ?>
+                <?php get_template_part('template-parts/page/content', 'list'); ?>
               <?php } ?>
+              <?php the_posts_pagination(); ?>
+              <?php wp_reset_postdata(); ?>
+            <?php } else { ?>
+              <?php get_template_part('template-parts/post/content', 'none'); ?>
             <?php } ?>
           </div>
           <a class="lists-link" href="<?php echo home_url() ?>/events">View All Events</a>
+          <?php } ?>
         </div>
         <div class="lists-homepage">
-          <?php if($project_exists) { ?>
+          <?php if($project_exists && $project_count > 0) { ?>
           <h2>Projects</h2>
-          <p>Projects goes here</p>
+          <div class="lists-wrapper">
+            <?php
+              $args = array(
+                'post_type' => 'project',
+                'posts_per_page' => 4,
+                'meta_key'  => 'project_end_date',
+                'orderby' => 'meta_value_num',
+                'order' => 'DESC'
+              );
+              $the_query = new WP_Query( $args );
+            ?>
+
+            <?php if($the_query->have_posts()) { ?>
+              <?php while($the_query->have_posts()) { ?>
+                <?php $the_query->the_post(); ?>
+                <?php get_template_part('template-parts/page/content', 'list'); ?>
+              <?php } ?>
+              <?php the_posts_pagination(); ?>
+              <?php wp_reset_postdata(); ?>
+            <?php } else { ?>
+              <?php get_template_part('template-parts/post/content', 'none'); ?>
+            <?php } ?>
+          </div>
+          <a class="lists-link" href="<?php echo home_url() ?>/projects">View All Projects</a>
           <?php } ?>
         </div>
       </main>
