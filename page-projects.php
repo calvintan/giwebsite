@@ -15,8 +15,8 @@
 
         <?php 
           $args = array( 
-            'post_type' => 'event',
-            'meta_key'  => 'event_date',
+            'post_type' => 'project',
+            'meta_key'  => 'project_end_date',
             'orderby' => 'meta_value_num', 
             'order' => 'DESC'
           );
