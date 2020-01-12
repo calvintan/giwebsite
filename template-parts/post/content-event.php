@@ -69,7 +69,7 @@
       </div>
     <?php } ?>
 
-    <?php if( $location ): ?>
+    <?php if(is_single() && $location): ?>
       <div class="c-post__event-table">
         <h3>Details</h3>
         <table class="table table-sm table-borderless">
