@@ -71,7 +71,8 @@
 
     <?php if( $location ): ?>
       <div class="c-post__event-table">
-        <table class="table table-borderless">
+        <h3>Details</h3>
+        <table class="table table-sm table-borderless">
           <tbody>
           <?php foreach( $location as $l ): ?>
             <tr>
