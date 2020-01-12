@@ -9,6 +9,10 @@
     height: auto;
   }
 
+  h3 {
+    font-size: 1.125rem;
+  }
+
   &.sticky {
     border-left: 5px solid $primary-colour;
   }
@@ -40,7 +44,8 @@
     clear: both;
   }
   &__header {
-    margin-bottom: 16px;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
   }
   &__footer {
     overflow: hidden;
@@ -77,29 +82,50 @@
   &__thumbnail,
   &__gallery,
   &__video {
-    margin: -20px -20px 20px -20px;
+    margin: -20px -20px 0 -20px;
     background-color: lightgray;
     text-align: center;
   }
   &__excerpt {
-    color: #495057;
+    color: $brown-text;
   }
   &__meta {
-    color: #495057;
+    color: $brown-text;
   }
   &__title {
     font-weight: 600;
-    font-size: 28px;
+    font-size: 1.5rem;
     a {
-      color: #000;
+      color: $brown-text;
       border-bottom: none;
     }
   }
   &__single-title {
     font-weight: 600;
+    font-size: 2rem;
     a {
-      color: #000;
+      color: $brown-text;
       border-bottom: none;
+    }
+  }
+  &__info {
+    color: $white;
+    background: $brown-text;
+    margin: 0 -20px;
+    padding: 20px;
+    font-size: 0.875rem;
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    li {
+      & + li {
+        margin-top: 0.5rem;
+      }
+      > span:first-child {
+        margin-right: 0.25rem;
+      }
     }
   }
 }

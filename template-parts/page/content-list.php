@@ -8,7 +8,7 @@
           <?php the_title();?></a>
     <?php echo '</div>'; ?>
   <?php } ?>
-  <?php if ('event' == get_post_type()) { ?>
+  <?php if('event' == get_post_type()) { ?>
     <?php
       $date_string = get_field('event_date');
       $date = DateTime::createFromFormat('d/m/Y', $date_string);
