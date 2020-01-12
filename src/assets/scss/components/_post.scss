@@ -108,7 +108,7 @@
       border-bottom: none;
     }
   }
-  &__info {
+  &__event-info {
     color: $white;
     background: $brown-text;
     margin: 0 -20px;
@@ -126,6 +126,14 @@
       > span:first-child {
         margin-right: 0.25rem;
       }
+    }
+  }
+  &__event-table table {
+    th {
+      width: 40px;
+    }
+    span {
+      display: block;
     }
   }
 }

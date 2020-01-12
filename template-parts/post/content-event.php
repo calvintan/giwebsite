@@ -15,7 +15,7 @@
         $date_string = get_field('event_date');
         $date = DateTime::createFromFormat('d/m/Y', $date_string);
       ?>
-      <div class="c-post__info">
+      <div class="c-post__event-info">
         <ul>
           <li>
             <span><i class="far fa-calendar"></i></span>
@@ -68,7 +68,46 @@
         <?php the_excerpt(); ?>
       </div>
     <?php } ?>
-    
+
+    <?php if( $location ): ?>
+      <div class="c-post__event-table">
+        <table class="table table-borderless">
+          <tbody>
+          <?php foreach( $location as $l ): ?>
+            <tr>
+              <th scope="row">
+                <i class="far fa-calendar-alt"></i>
+              </th>
+              <td>
+                <?php echo $date->format('j M Y'); ?>, 
+                <?php echo $start_time; ?> – <?php echo $end_time; ?>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <i class="fas fa-map-marker-alt"></i>
+              </th>
+              <td>
+                <span><?php echo get_the_title( $l->ID ); ?>, </span>
+                <span><?php the_field('location_address_one', $l->ID); ?>, </span>
+                <span><?php the_field('location_address_two', $l->ID); ?>, </span>
+                <span><?php the_field('location_city', $l->ID); ?></span>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <i class="fas fa-subway"></i>
+              </th>
+              <td>
+                <?php the_field('location_metro', $l->ID); ?>
+              </td>
+            </tr>
+          <?php endforeach; ?>
+          </tbody>
+        </table>
+      </div>
+    <?php endif; ?>
+
     <?php if(!is_single()) {_themename_readmore_link();} ?>
   </div>
 </article>
