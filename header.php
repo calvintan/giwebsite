@@ -13,28 +13,28 @@
 </head>
 <body <?php body_class(); ?>>
 <header role="banner">
-  <nav class="navbar navbar-expand-md navbar-dark <?php if(is_front_page()) { echo "fixed-top"; } ?>" role="navigation">
-    <div class="container">
-      <a class="navbar-brand logo" href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html(bloginfo('name')); ?></a>
-      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-  
-      <?php
-        wp_nav_menu( array(
-            'theme_location'    => 'main-menu',
-            'depth'             => 2,
-            'container'         => 'div',
-            'container_class'   => 'collapse navbar-collapse',
-            'container_id'      => 'navbarsExampleDefault',
-            'menu_class'        => 'nav navbar-nav',
-            'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-            'walker'            => new WP_Bootstrap_Navwalker(),
-        ) );
-        ?>
-  
-      <?php get_search_form(true); ?>
-    </div>
+  <nav class="nav__main <?php if(is_front_page()) { echo "fixed-top"; } ?>" role="navigation">
+    <div class="nav__wrapper">
+      <a class="nav__btn" href="#">
+        <img src="<?php bloginfo('stylesheet_directory'); ?>/dist/assets/images/menu.png" alt="">
+      </a>
+
+      <a class="nav__manifesto" href="#">Manifesto</a>
+
+      <a class="nav__logo" href="<?php echo esc_url(home_url('/')); ?>">
+        <img src="<?php bloginfo('stylesheet_directory'); ?>/dist/assets/images/gi-logo.png" alt="<?php esc_html(bloginfo('name')); ?>">
+      </a>
+
+      <a class="nav__link" href="#">seedsoflife.io</a>
+
+      <div class="nav__search">
+        <?php get_search_form(true); ?>
+      </div>
+
+      <a class="nav__language" href="#">
+        <img src="<?php bloginfo('stylesheet_directory'); ?>/dist/assets/images/gi-zh.png" alt="">
+      </a>
+    </div>  
   </nav>
 </header>
 

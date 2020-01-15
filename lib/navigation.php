@@ -8,9 +8,4 @@ function _themename_register_menus() {
 }
 add_action('init', '_themename_register_menus');
 
-function register_navwalker(){
-	require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
-}
-add_action( 'after_setup_theme', 'register_navwalker' );
-
 ?>
