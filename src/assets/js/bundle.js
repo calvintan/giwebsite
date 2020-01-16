@@ -1,5 +1,6 @@
 import $ from "jquery";
 import "../../../node_modules/bootstrap/dist/js/bootstrap.bundle";
+import "../../../node_modules/jquery.ripples/dist/jquery.ripples-min";
 
 $(document).ready(() => {
   $(".nav__btn, .menu-close").click(function() {
@@ -17,6 +18,12 @@ $(document).ready(() => {
         .addClass("show-nav");
     }
     return false;
+  });
+
+  $("#carousel-homepage").ripples({
+    resolution: 512,
+    dropRadius: 20,
+    perturbance: 0.04
   });
 });
 
