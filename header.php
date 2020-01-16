@@ -13,7 +13,7 @@
 </head>
 <body <?php body_class(); ?>>
 <div id="menu-fullscreen">
-  <div class="container">
+  <div class="container-fluid">
     <a href="#" class="menu-close"></a>
     <div class="nav__search">
       <?php get_search_form(true); ?>

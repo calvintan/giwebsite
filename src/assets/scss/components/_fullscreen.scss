@@ -6,7 +6,7 @@
   top: 0;
   left: 0;
   overflow: hidden;
-  background-color: $beige;
+  background-color: rgba($color: $beige, $alpha: 0.95);
   z-index: 0;
   opacity: 0;
   transition: opacity 0.5s ease;
