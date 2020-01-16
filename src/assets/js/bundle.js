@@ -20,6 +20,23 @@ $(document).ready(() => {
     return false;
   });
 
+  $(".nav__manifesto, .m__btn").click(function() {
+    if ($("body").hasClass("show-manifesto")) {
+      $("body")
+        .removeClass("show-manifesto")
+        .addClass("hide-manifesto");
+
+      setTimeout(function() {
+        $("body").removeClass("hide-manifesto");
+      }, 500);
+    } else {
+      $("body")
+        .removeClass("hide-manifesto")
+        .addClass("show-manifesto");
+    }
+    return false;
+  });
+
   $("#carousel-homepage").ripples({
     resolution: 512,
     dropRadius: 20,

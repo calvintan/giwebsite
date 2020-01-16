@@ -1,0 +1,95 @@
+#manifesto {
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  opacity: 0;
+  color: $white;
+  overflow-x: hidden;
+  transition: opacity 0.5s ease;
+}
+
+.show-manifesto #manifesto {
+  z-index: 9999;
+  opacity: 1;
+}
+
+.hide-manifesto #manifesto {
+  z-index: 9999;
+  opacity: 0;
+}
+
+.m__wrapper {
+  position: relative;
+  background-color: $brown-dark;
+  width: 100%;
+  height: 100%;
+  padding: 2rem 0;
+  overflow-y: scroll;
+
+  &:before {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/gi-bg.jpg) center no-repeat;
+    background-size: cover;
+    opacity: 0.1;
+  }
+}
+
+.m__close {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 4rem;
+
+  p {
+    text-transform: uppercase;
+    font-size: 0.625rem;
+    letter-spacing: 2px;
+  }
+}
+
+.m__btn {
+  margin-bottom: 0.5rem;
+
+  &:before,
+  &:after {
+    background-color: $white;
+  }
+}
+
+.m__content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+
+  h4 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+  }
+
+  .textwidget p {
+    counter-increment: para;
+    line-height: 1.6;
+    margin-bottom: 4rem;
+
+    &:before {
+      content: "<" counter(para) ">";
+      display: block;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }
+  }
+}

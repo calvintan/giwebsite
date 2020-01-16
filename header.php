@@ -12,6 +12,21 @@
   </style>
 </head>
 <body <?php body_class(); ?>>
+<div id="manifesto">
+  <div class="m__wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 offset-sm-2">
+          <div class="m__close">
+            <a href="#" class="m__btn"></a>
+            <p>Close</p>
+          </div>
+          <?php dynamic_sidebar( 'manifesto' ); ?>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <div id="menu-fullscreen">
   <div class="container-fluid">
     <a href="#" class="menu-close"></a>

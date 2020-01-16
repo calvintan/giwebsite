@@ -23,12 +23,13 @@
   opacity: 0;
 }
 
-.menu-close {
+.menu-close,
+.m__btn {
   position: relative;
   display: block;
   width: 30px;
   height: 30px;
-  opacity: 0.3;
+  opacity: 0.6;
 
   &:before,
   &:after {
