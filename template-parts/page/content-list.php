@@ -13,7 +13,7 @@
       $date_string = get_field('event_date');
       $date = DateTime::createFromFormat('d/m/Y', $date_string);
     ?>
-    <div class="lists-date mt-2">
+    <div class="lists-date">
       <p><?php echo $date->format('l'); ?></p>
       <p><?php echo $date->format('j M Y'); ?></p>
     </div>

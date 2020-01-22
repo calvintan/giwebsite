@@ -15,6 +15,10 @@
     }
   }
 
+  + .lists-homepage {
+    margin-top: 5rem;
+  }
+
   .lists-wrapper {
     overflow-x: scroll;
     overflow-y: hidden;
@@ -63,10 +67,10 @@
     display: inline-block;
     margin-top: 1rem;
     font-size: 1rem;
-    text-transform: uppercase;
+    text-transform: lowercase;
     color: $black;
     padding-bottom: 0.25rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 
     &:hover {
       text-decoration: none;
@@ -76,5 +80,11 @@
   .lists-date {
     display: flex;
     justify-content: space-between;
+    margin-top: 0.625rem;
+
+    p {
+      opacity: 0.75;
+      margin-bottom: 0.5rem;
+    }
   }
 }
