@@ -12,7 +12,21 @@
       height: 1px;
       width: 30px;
       background: $beige;
-      margin: 1rem 0;
+      margin: 2rem 0 1.5rem;
     }
+  }
+}
+
+#menu-footer {
+  padding: 0;
+  list-style: none;
+  text-transform: uppercase;
+
+  a {
+    color: $beige;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
   }
 }

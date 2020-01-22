@@ -93,35 +93,3 @@
     }
   }
 }
-
-.menu-social {
-  list-style: none;
-  padding: 0;
-  font-size: 2rem;
-
-  li {
-    display: inline-block;
-
-    a {
-      color: $brown-text;
-      opacity: 0.6;
-      transition: opacity 0.3s ease-out;
-    }
-
-    a:hover {
-      opacity: 1;
-    }
-
-    &:last-child a {
-      font-size: 1rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid $brown-text;
-      text-decoration: none;
-      vertical-align: middle;
-    }
-
-    & + li {
-      margin-left: 1.5rem;
-    }
-  }
-}

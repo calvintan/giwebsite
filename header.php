@@ -36,13 +36,6 @@
     <nav role="navigation" aria-label="<?php esc_html_e( 'Main Navigation', '_themename' ) ?>">
       <?php wp_nav_menu( array('theme_location' => 'main-menu') ) ?>
     </nav>
-    <ul class="menu-social">
-      <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-      <li><a href="#"><i class="fab fa-weixin"></i></a></li>
-      <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-      <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-      <li><a href="#">seedsoflife.io</a></li>
-    </ul>
   </div>
 </div>
 <header role="banner">
