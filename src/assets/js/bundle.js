@@ -38,9 +38,9 @@ $(document).ready(() => {
   });
 
   $("#carousel-homepage").ripples({
-    resolution: 512,
-    dropRadius: 20,
-    perturbance: 0.04
+    resolution: 1024,
+    // dropRadius: 20,
+    perturbance: 0.01
   });
 });
 
