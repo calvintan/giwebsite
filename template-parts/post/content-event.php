@@ -75,6 +75,16 @@
         <table class="table table-sm table-borderless">
           <tbody>
           <?php foreach( $location as $l ): ?>
+            <?php
+              $latitude = get_field('location_latitude', $l->ID);
+              $longitude = get_field('location_longitude', $l->ID);
+              $label = get_the_title( $l->ID );
+              $mapData = [
+                'lat' => $latitude,
+                'long' => $longitude,
+                'label' => $label
+              ];
+            ?>
             <tr>
               <th scope="row">
                 <i class="far fa-calendar-alt"></i>
@@ -107,6 +117,8 @@
           </tbody>
         </table>
       </div>
+      <div id="baidu-map"></div>
+      <script type="application/json" id="mapData"><?= json_encode( $mapData, JSON_UNESCAPED_SLASHES ) ?></script>
     <?php endif; ?>
 
     <?php if(!is_single()) {_themename_readmore_link();} ?>

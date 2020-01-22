@@ -42,6 +42,45 @@ $(document).ready(() => {
     // dropRadius: 20,
     perturbance: 0.01
   });
+
+  $(function() {
+    var $mapData = $("#mapData");
+    if (!$mapData.length) return;
+
+    try {
+      $mapData = JSON.parse($mapData.text());
+    } catch (err) {
+      // if invalid json
+      return;
+    }
+
+    // Variables for each map property
+    let mLat = parseFloat($mapData.lat);
+    let mLong = parseFloat($mapData.long);
+    let mlabel = $mapData.label;
+
+    // Use the variables to display the map
+    var map = new BMap.Map("baidu-map");
+    var point = new BMap.Point(mLat, mLong);
+    var opts = { type: BMAP_NAVIGATION_CONTROL_SMALL };
+    map.addControl(new BMap.NavigationControl(opts));
+    map.centerAndZoom(point, 15);
+
+    // Add a marker with the name of location
+    function translateCallback(tCoordinates) {
+      if (tCoordinates.status == 0) {
+        var marker = new BMap.Marker(tCoordinates.points[0]);
+        map.addOverlay(marker);
+        map.setCenter(tCoordinates.points[0]);
+        var label = new BMap.Label(mlabel, {
+          offset: new BMap.Size(20, -10)
+        });
+        marker.setLabel(label);
+      }
+    }
+    var Convertor = new BMap.Convertor();
+    Convertor.translate([point], 3, 5, translateCallback);
+  });
 });
 
 $(document).keyup(function(e) {
