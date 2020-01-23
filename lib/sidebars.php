@@ -19,6 +19,15 @@ function _themename_sidebar_widgets() {
     'before_title'  => '<h4>',
     'after_title'   => '</h4>',
   ));
+
+  register_sidebar( array(
+    'id'            => 'language',
+    'name'          => 'Language',
+    'before_widget' => '<section class="m__language">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h4>',
+    'after_title'   => '</h4>',
+  ));
 }
 
 add_action( 'widgets_init', '_themename_sidebar_widgets' );
