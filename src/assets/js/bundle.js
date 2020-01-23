@@ -61,7 +61,7 @@ $(document).ready(() => {
 
     // Use the variables to display the map
     var map = new BMap.Map("baidu-map");
-    var point = new BMap.Point(mLat, mLong);
+    var point = new BMap.Point(mLong, mLat);
     var opts = { type: BMAP_NAVIGATION_CONTROL_SMALL };
     map.addControl(new BMap.NavigationControl(opts));
     map.centerAndZoom(point, 15);
