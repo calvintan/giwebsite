@@ -2,7 +2,17 @@
   <?php while(have_posts()) { ?>
     <?php the_post(); ?>
 
-    <?php get_template_part( 'template-parts/post/content', get_post_format() ); ?>
+    <?php
+      if(get_post_type() === 'event') {
+        get_template_part( 'template-parts/post/content', 'event' );
+      }
+      else if (get_post_type() === 'project') {
+        get_template_part( 'template-parts/post/content', 'project' );
+      }
+      else { 
+        get_template_part( 'template-parts/post/content', get_post_format() );
+      }
+    ?>
 
     <?php /* get_template_part('template-parts/single/author'); */ ?>
     

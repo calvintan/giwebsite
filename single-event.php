@@ -4,7 +4,7 @@
   <div class="row justify-content-center">
     <div class="col-md-10">
       <main role="main">
-        <?php get_template_part('loop', 'event'); ?>
+        <?php get_template_part('loop', 'single'); ?>
       </main>
     </div>
   </div>
