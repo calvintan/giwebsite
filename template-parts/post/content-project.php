@@ -26,6 +26,7 @@
     </div>
   </div>
 
+  <?php if(get_field('project_subtitle_one') && get_field('project_content_one')): ?>
   <div class="row mt-5">
     <div class="col-md-4">
       <div class="project-subtitle">
@@ -38,7 +39,9 @@
       </div>
     </div>
   </div>
+  <?php endif; ?>
 
+  <?php if(get_field('project_subtitle_two') && get_field('project_content_two')): ?>
   <div class="row mt-5">
     <div class="col-md-4">
       <div class="project-subtitle">
@@ -51,6 +54,7 @@
       </div>
     </div>
   </div>
+  <?php endif; ?>
   
   <div class="row mt-5">
     <div class="col-md-8 offset-md-4">
@@ -77,9 +81,11 @@
   </div>
   <?php endif; ?>
 
+  <?php if( get_field('project_press') ): ?>
   <div class="row mt-4">
     <div class="col-md-8 offset-md-4">
       <?php the_field('project_press'); ?>
     </div>
   </div>
+  <?php endif; ?>
 </article>
