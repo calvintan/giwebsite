@@ -51,7 +51,7 @@
         <img src="<?php bloginfo('stylesheet_directory'); ?>/dist/assets/images/gi-logo.png" alt="<?php esc_html(bloginfo('name')); ?>">
       </a>
 
-      <a class="nav__link" href="#">seedsoflife.io</a>
+      <a class="nav__link" href="#">seedsofchange.me</a>
 
       <div class="nav__search">
         <?php get_search_form(true); ?>
