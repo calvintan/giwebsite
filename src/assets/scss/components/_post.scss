@@ -209,15 +209,35 @@
   }
 }
 
-.c-post__card {
-  background: $white;
-  padding: 20px;
+.c-post {
+  &__card {
+    background: $white;
+    padding: 20px;
 
-  h3 {
-    line-height: 1.5;
+    h3 {
+      line-height: 1.5;
+    }
+
+    p {
+      margin: 0;
+    }
   }
-
-  p {
-    margin: 0;
+  &__card-info {
+    color: $white;
+    background: $brown-text;
+    padding: 15px 20px;
+    font-size: 0.875rem;
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    li {
+      font-size: 1rem;
+      text-transform: uppercase;
+    }
+    li:last-child {
+      opacity: 0.5;
+    }
   }
 }

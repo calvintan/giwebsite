@@ -7,34 +7,25 @@
 
   <?php if('event' == get_post_type()) { ?>
     <?php
-      $start_time = get_field('event_start_time');
-      $end_time = get_field('event_end_time');
-      $location = get_field('event_location');
-      
       $date_string = get_field('event_date');
       $date = DateTime::createFromFormat('d/m/Y', $date_string);
     ?>
-    <div class="c-post__event-info">
+    <div class="c-post__card-info">
       <ul>
         <li>
-          <span><i class="far fa-calendar"></i></span>
           <span>
-            <?php echo $date->format('j M Y'); ?>, 
-            <?php echo $start_time; ?> – <?php echo $end_time; ?>
+            <?php echo $date->format('l'); ?>
           </span>
         </li>
         <li>
-          <span><i class="fas fa-map-marker-alt"></i></span>
-          <?php if( $location ): ?>
-            <?php foreach( $location as $l ): ?>
-              <?php echo get_the_title( $l->ID ); ?>
-            <?php endforeach; ?>
-          <?php endif; ?>
+          <span>
+            <?php echo $date->format('j F Y'); ?>
+          </span>
         </li>
       </ul>
     </div>
   <?php } ?>
-  
+
   <div class="c-post__card">
     <h3 class="c-post__title">
       <a
