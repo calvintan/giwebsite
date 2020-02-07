@@ -138,8 +138,24 @@
   }
 }
 
-.single-project .c-post__content {
-  line-height: 1.8;
+.single-project .c-post {
+  &__content {
+    line-height: 1.8;
+  }
+
+  &__single-title {
+    font-size: 1.125rem;
+    font-weight: normal;
+
+    &:after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 35px;
+      background: $black;
+      margin: 1rem 0;
+    }
+  }
 }
 
 .project-subtitle {
@@ -153,6 +169,22 @@
 .project-subtitle,
 .project-content {
   line-height: 1.8;
+}
+
+.project-date p {
+  position: relative;
+  font-size: 1.125rem;
+  margin: 0;
+
+  &:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    height: 1px;
+    width: 35px;
+    background: $black;
+    margin: 1rem 0;
+  }
 }
 
 .project-partners {
