@@ -1,7 +1,4 @@
 .c-post {
-  background-color: $white;
-  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.05);
-  padding: 20px;
   overflow: hidden;
 
   img {
@@ -80,10 +77,13 @@
     width: 100%;
     margin: 0 0 20px 0;
   }
+  &__thumbnail img {
+    max-width: 100%;
+    height: auto;
+  }
   &__thumbnail,
   &__gallery,
   &__video {
-    margin: -20px -20px 0 -20px;
     background-color: lightgray;
     text-align: center;
   }
@@ -112,7 +112,6 @@
   &__event-info {
     color: $white;
     background: $brown-text;
-    margin: 0 -20px;
     padding: 20px;
     font-size: 0.875rem;
     ul {
@@ -137,4 +136,21 @@
       display: block;
     }
   }
+}
+
+.project-subtitle {
+  text-transform: uppercase;
+  color: $white;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+
+.project-subtitle,
+.project-content {
+  line-height: 1.8;
+}
+
+.single-project .c-post__content {
+  line-height: 1.8;
 }

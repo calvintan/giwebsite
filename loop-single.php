@@ -16,7 +16,7 @@
 
     <?php /* get_template_part('template-parts/single/author'); */ ?>
     
-    <?php get_template_part( 'template-parts/single/navigation' ); ?>
+    <?php /* get_template_part( 'template-parts/single/navigation' ); */ ?>
     
     <?php 
     if( comments_open() || get_comments_number()) {
