@@ -76,4 +76,10 @@
     </div>
   </div>
   <?php endif; ?>
+
+  <div class="row mt-4">
+    <div class="col-md-8 offset-md-4">
+      <?php the_field('project_press'); ?>
+    </div>
+  </div>
 </article>
