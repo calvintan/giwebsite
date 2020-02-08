@@ -42,9 +42,18 @@
             $alphabet[$firstLetter] = [];
           }
         ?>
-        <li>
-          <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-        </li>
+
+        <?php
+          $value = get_field( "partner_projects" );
+        ?>
+
+        <?php if ($value) : ?>
+          <li>
+            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+          </li>
+        <?php else: ?>
+          <li><?php the_title(); ?></li>
+        <?php endif; ?>
 
         <?php
           $alphabet[$firstLetter][] = ob_get_contents();
