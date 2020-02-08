@@ -1,9 +1,9 @@
 <?php get_header(); ?>
 
-<div class="container my-5">
-  <main role="main">
+<main role="main">
+  <div class="container my-5">
     <?php get_template_part('loop', 'single'); ?>
-  </main>
-</div>
+  </div>
+</main>
 
 <?php get_footer(); ?>
