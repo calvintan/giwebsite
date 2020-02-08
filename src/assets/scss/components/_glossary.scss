@@ -1,3 +1,25 @@
 .glossary {
   list-style-type: none;
+  padding: 0;
+
+  h3 {
+    font-size: 1.125rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.glossary-items {
+  padding: 0;
+  list-style-type: none;
+  margin-bottom: 3rem;
+
+  li {
+    opacity: 0.7;
+  }
+
+  a {
+    color: $black;
+    text-decoration: underline;
+  }
 }
