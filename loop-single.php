@@ -9,6 +9,9 @@
       else if (get_post_type() === 'project') {
         get_template_part( 'template-parts/post/content', 'project' );
       }
+      else if (get_post_type() === 'partner') {
+        get_template_part( 'template-parts/post/content', 'partner' );
+      }
       else { 
         get_template_part( 'template-parts/post/content', get_post_format() );
       }
