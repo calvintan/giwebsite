@@ -1,4 +1,4 @@
-<header class="c-post__header mb-5">
+<header class="c-post__header">
   <h1 class="c-post__single-title">
     <?php the_title();?>
   </h1>
