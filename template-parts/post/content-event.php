@@ -25,15 +25,10 @@
         <div class="c-post__event-info">
           <ul>
             <li>
-              <span>
-                <?php echo $date->format('j M Y'); ?>, 
-                <?php echo $start_time; ?> – <?php echo $end_time; ?>
-              </span>
+              <?php echo $date->format('j M Y'); ?>
             </li>
             <li>
-              <span>
-                <?php echo $start_time; ?> – <?php echo $end_time; ?>
-              </span>
+              <?php echo $start_time; ?> – <?php echo $end_time; ?>
             </li>
             <li>
               <?php if( $location ): ?>
@@ -103,51 +98,55 @@
       </div>
     </div>
     <div class="col-md-8">
-      <div id="qrcode"></div>
-
-      <table class="table table-sm table-borderless">
-        <tbody>
-        <?php foreach( $location as $l ): ?>
-          <?php
-            $latitude = get_field('location_latitude', $l->ID);
-            $longitude = get_field('location_longitude', $l->ID);
-            $label = get_the_title( $l->ID );
-            $mapData = [
-              'lat' => $latitude,
-              'long' => $longitude,
-              'label' => $label
-            ];
-          ?>
-          <tr>
-            <th scope="row">
-              <i class="far fa-calendar-alt"></i>
-            </th>
-            <td>
-              <span><?php echo $date->format('j M Y'); ?></span> 
-              <span><?php echo $start_time; ?> – <?php echo $end_time; ?></span>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">
-              <i class="fas fa-map-marker-alt"></i>
-            </th>
-            <td>
-              <span><?php echo get_the_title( $l->ID ); ?>, </span>
-              <span><?php the_field('location_address_one', $l->ID); ?>, </span>
-              <span><?php the_field('location_address_two', $l->ID); ?>, <?php the_field('location_city', $l->ID); ?></span>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">
-              <i class="fas fa-subway"></i>
-            </th>
-            <td>
-              <?php the_field('location_metro', $l->ID); ?>
-            </td>
-          </tr>
-        <?php endforeach; ?>
-        </tbody>
-      </table>
+      <div class="d-flex">
+        <?php if ($event_url) { ?>
+          <div id="qrcode"></div>
+        <?php } ?>
+  
+        <table class="table table-sm table-borderless table-event">
+          <tbody>
+          <?php foreach( $location as $l ): ?>
+            <?php
+              $latitude = get_field('location_latitude', $l->ID);
+              $longitude = get_field('location_longitude', $l->ID);
+              $label = get_the_title( $l->ID );
+              $mapData = [
+                'lat' => $latitude,
+                'long' => $longitude,
+                'label' => $label
+              ];
+            ?>
+            <tr>
+              <th scope="row">
+                <i class="far fa-calendar-alt"></i>
+              </th>
+              <td>
+                <span><?php echo $date->format('j M Y'); ?></span> 
+                <span><?php echo $start_time; ?> – <?php echo $end_time; ?></span>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <i class="fas fa-map-marker-alt"></i>
+              </th>
+              <td>
+                <span><?php echo get_the_title( $l->ID ); ?>, </span>
+                <span><?php the_field('location_address_one', $l->ID); ?>, </span>
+                <span><?php the_field('location_address_two', $l->ID); ?>, <?php the_field('location_city', $l->ID); ?></span>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <i class="fas fa-subway"></i>
+              </th>
+              <td>
+                <span><?php the_field('location_metro', $l->ID); ?></span>
+              </td>
+            </tr>
+          <?php endforeach; ?>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
   <script type="application/json" id="event_url"><?= json_encode( $event_url, JSON_UNESCAPED_SLASHES ) ?></script>
