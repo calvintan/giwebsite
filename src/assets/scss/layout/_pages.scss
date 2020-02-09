@@ -1,4 +1,6 @@
 .page {
+  line-height: 1.8;
+
   .page__title {
     font-size: 1rem;
     text-transform: uppercase;
@@ -17,7 +19,25 @@
     margin-bottom: 3rem;
   }
 }
-#baidu-map {
-  width: 100%;
-  min-height: 250px;
+
+.team,
+.volunteers {
+  margin-top: 4rem;
+}
+
+.team-member {
+  margin-bottom: 2rem;
+  line-height: 1.4;
+
+  img {
+    margin-bottom: 1rem;
+  }
+
+  &__name {
+    margin: 0;
+  }
+
+  &__pos {
+    opacity: 0.6;
+  }
 }
