@@ -1,23 +1,23 @@
 .page {
   line-height: 1.8;
+}
 
-  .page__title {
-    font-size: 1rem;
-    text-transform: uppercase;
+.page__title {
+  font-size: 1rem;
+  text-transform: uppercase;
 
-    &:after {
-      content: "";
-      display: block;
-      height: 1px;
-      width: 35px;
-      background: $black;
-      margin: 1rem 0;
-    }
+  &:after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 35px;
+    background: $black;
+    margin: 1rem 0;
   }
+}
 
-  .page__header {
-    margin-bottom: 3rem;
-  }
+.page__header {
+  margin-bottom: 3rem;
 }
 
 .team,
