@@ -57,6 +57,34 @@ $(document).ready(() => {
 
     new QRCode(document.getElementById("qrcode"), $event_url);
   });
+
+  $("#teamModal").on("show.bs.modal", function(event) {
+    // Get the button that triggered the modal
+    const button = $(event.relatedTarget);
+    const teamObj = {
+      name: button.siblings(".team-member__name").text(),
+      pos: button.siblings(".team-member__pos").text(),
+      why: button.siblings(".team-member__why").text(),
+      email: button.siblings(".team-member__email").text(),
+      web: button.siblings(".team-member__website").text()
+    };
+
+    $(this)
+      .find(".modal-title")
+      .text(teamObj.name);
+    $(this)
+      .find(".modal-subtitle")
+      .text(teamObj.pos);
+    $(this)
+      .find(".modal-info")
+      .text(teamObj.why);
+    $(this)
+      .find(".modal-email")
+      .text(teamObj.email);
+    $(this)
+      .find(".modal-web")
+      .text(teamObj.web);
+  });
 });
 
 $(document).keyup(function(e) {

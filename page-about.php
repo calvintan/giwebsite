@@ -44,7 +44,7 @@
           <?php while( $team_query->have_posts() ) : $team_query->the_post(); ?>
             <div class="col-md-3">
               <div class="team-member">
-                <a href="#">
+                <a href="#" data-toggle="modal" data-target="#teamModal">
                   <?php the_post_thumbnail('thumbnail'); ?>
                 </a>
                 <p class="team-member__name">
@@ -52,6 +52,15 @@
                 </p>
                 <p class="team-member__pos">
                   <?php the_field('member_position'); ?>
+                </p>
+                <p class="team-member__why">
+                  <?php the_field('member_reason'); ?>
+                </p>
+                <p class="team-member__email">
+                  <?php the_field('member_email'); ?>
+                </p>
+                <p class="team-member__website">
+                  <?php the_field('member_website'); ?>
                 </p>
               </div>
             </div>
@@ -123,6 +132,25 @@
         </li>
       <?php endforeach;?>
     </ul>
+  </div>
+
+  <div class="modal fade" id="teamModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalLabel">Title</h5>
+          <p class="modal-subtitle">Subtitle</p>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="modal-info"></p>
+          <p class="modal-email"></p>
+          <p class="modal-web"></p>
+        </div>
+      </div>
+    </div>
   </div>
 </main>
 

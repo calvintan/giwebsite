@@ -40,4 +40,10 @@
   &__pos {
     opacity: 0.6;
   }
+
+  &__why,
+  &__email,
+  &__website {
+    display: none;
+  }
 }
