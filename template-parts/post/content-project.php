@@ -69,10 +69,15 @@
   <?php $partners = get_field('project_partners'); ?>
   <?php if( $partners ): ?>
   <div class="row mt-5">
-    <div class="col-md-8 offset-md-4">
+    <div class="col-md-4">
+      <div class="project-subtitle">
+        Partners
+      </div>
+    </div>
+    <div class="col-md-8">
       <div class="project-partners">
         <?php foreach( $partners as $partner ): ?>    
-          <a class="project-partners__logo" target="_blank" rel="noopener" href="<?php the_field('partner_url', $partner->ID); ?>">
+          <a class="project-partners__logo" target="_blank" rel="noopener noreferrer" href="<?php the_field('partner_url', $partner->ID); ?>">
             <img src="<?php the_field('partner_logo', $partner->ID); ?>" alt="<?php echo get_the_title( $partner->ID ); ?>">
           </a>
         <?php endforeach; ?>

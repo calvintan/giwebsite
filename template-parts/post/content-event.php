@@ -21,6 +21,7 @@
           $date = DateTime::createFromFormat('d/m/Y', $date_string);
 
           $event_url = get_field('event_qr_code');
+          $partners = get_field('event_partners');
         ?>
         <div class="c-post__event-info">
           <ul>
@@ -150,5 +151,24 @@
     </div>
   </div>
   <script type="application/json" id="event_url"><?= json_encode( $event_url, JSON_UNESCAPED_SLASHES ) ?></script>
+  <?php endif; ?>
+
+  <?php if( $partners ): ?>
+  <div class="row mt-5">
+    <div class="col-md-4">
+      <div class="project-subtitle">
+        Partners
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="project-partners">
+        <?php foreach( $partners as $partner ): ?>    
+          <a class="project-partners__logo" target="_blank" rel="noopener noreferrer" href="<?php the_field('partner_url', $partner->ID); ?>">
+            <img src="<?php the_field('partner_logo', $partner->ID); ?>" alt="<?php echo get_the_title( $partner->ID ); ?>">
+          </a>
+        <?php endforeach; ?>
+      </div>
+    </div>
+  </div>
   <?php endif; ?>
 </article>
