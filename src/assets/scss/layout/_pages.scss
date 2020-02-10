@@ -31,6 +31,12 @@
 
   img {
     margin-bottom: 1rem;
+    filter: grayscale(1);
+    transition: filter 0.5s ease-out;
+
+    &:hover {
+      filter: grayscale(0);
+    }
   }
 
   &__name {
@@ -45,5 +51,53 @@
   &__email,
   &__website {
     display: none;
+  }
+}
+
+#teamModal {
+  .modal-body {
+    padding: 0;
+    margin-top: 8rem;
+    color: $white;
+  }
+
+  .modal-content {
+    border: 0;
+    background: transparent;
+  }
+
+  button.close {
+    color: $white;
+    float: none;
+    text-shadow: none;
+    font-size: 2rem;
+    width: max-content;
+    padding: 0.5rem 1rem;
+    margin: 0 auto;
+  }
+
+  .modal-pos {
+    &:after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 40px;
+      background: $white;
+      margin: 1rem 0 2rem;
+    }
+  }
+
+  .modal-email,
+  .modal-web {
+    display: block;
+    width: max-content;
+  }
+}
+
+.modal-backdrop {
+  background: $brown-dark;
+
+  &.show {
+    opacity: 0.9;
   }
 }

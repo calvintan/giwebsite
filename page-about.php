@@ -42,7 +42,7 @@
   
         <div class="row">
           <?php while( $team_query->have_posts() ) : $team_query->the_post(); ?>
-            <div class="col-md-3">
+            <div class="col-md-3 col-6">
               <div class="team-member">
                 <a href="#" data-toggle="modal" data-target="#teamModal">
                   <?php the_post_thumbnail('thumbnail'); ?>
@@ -135,19 +135,25 @@
   </div>
 
   <div class="modal fade" id="teamModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalLabel">Title</h5>
-          <p class="modal-subtitle">Subtitle</p>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
         <div class="modal-body">
-          <p class="modal-info"></p>
-          <p class="modal-email"></p>
-          <p class="modal-web"></p>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-4">
+                <h5 class="modal-title" id="modalLabel">Title</h5>
+                <p class="modal-pos">Position</p>
+              </div>
+              <div class="col-md-8">
+                <p class="modal-info"></p>
+                <a class="modal-email"></a>
+                <a class="modal-web"></a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

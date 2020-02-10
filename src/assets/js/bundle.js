@@ -65,25 +65,27 @@ $(document).ready(() => {
       name: button.siblings(".team-member__name").text(),
       pos: button.siblings(".team-member__pos").text(),
       why: button.siblings(".team-member__why").text(),
-      email: button.siblings(".team-member__email").text(),
-      web: button.siblings(".team-member__website").text()
+      email: $.trim(button.siblings(".team-member__email").text()),
+      web: $.trim(button.siblings(".team-member__website").text())
     };
 
     $(this)
       .find(".modal-title")
       .text(teamObj.name);
     $(this)
-      .find(".modal-subtitle")
+      .find(".modal-pos")
       .text(teamObj.pos);
     $(this)
       .find(".modal-info")
       .text(teamObj.why);
     $(this)
       .find(".modal-email")
-      .text(teamObj.email);
+      .text(teamObj.email)
+      .prop("href", `mailto:${teamObj.email}`);
     $(this)
       .find(".modal-web")
-      .text(teamObj.web);
+      .text(teamObj.web)
+      .prop("href", teamObj.web);
   });
 });
 
