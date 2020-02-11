@@ -42,6 +42,18 @@
   
         <div class="row">
           <?php while( $team_query->have_posts() ) : $team_query->the_post(); ?>
+            <?php
+              $object = (object) [
+                'pos' => get_field( "member_position" ),
+                'why' => get_field( "member_reason" ),
+                'email' => get_field( "member_email" ),
+                'website' => get_field( "member_website" ),
+                'facebook' => get_field( "member_facebook" ),
+                'linkedin' => get_field( "member_linkedin" ),
+                'weibo' => get_field( "member_weibo" )
+              ];
+            ?>
+
             <div class="col-md-3 col-6">
               <div class="team-member">
                 <a href="#" data-toggle="modal" data-target="#teamModal">
@@ -50,18 +62,13 @@
                 <p class="team-member__name">
                   <?php the_title(); ?>
                 </p>
-                <p class="team-member__pos">
-                  <?php the_field('member_position'); ?>
-                </p>
-                <p class="team-member__why">
-                  <?php the_field('member_reason'); ?>
-                </p>
-                <p class="team-member__email">
-                  <?php the_field('member_email'); ?>
-                </p>
-                <p class="team-member__website">
-                  <?php the_field('member_website'); ?>
-                </p>
+                <?php foreach ($object as $key => $value) : ?>
+                  <?php if($value) { ?>
+                  <p class="team-member__<?php echo $key; ?>">
+                    <?php echo $value; ?>
+                  </p>
+                  <?php } ?>
+                <?php endforeach;?>
               </div>
             </div>
           <?php endwhile; ?>
@@ -148,9 +155,16 @@
                 <p class="modal-pos">Position</p>
               </div>
               <div class="col-md-8">
-                <p class="modal-info"></p>
-                <a class="modal-email"></a>
-                <a class="modal-web"></a>
+                <p class="modal-why"></p>
+                <ul class="modal-info">
+                  <li class="modal-email"></li>
+                  <li class="modal-website"></li>
+                </ul>
+                <ul class="modal-social">
+                  <li class="modal-facebook"></li>
+                  <li class="modal-linkedin"></li>
+                  <li class="modal-weibo"></li>
+                </ul>
               </div>
             </div>
           </div>

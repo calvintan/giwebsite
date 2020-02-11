@@ -61,31 +61,87 @@ $(document).ready(() => {
   $("#teamModal").on("show.bs.modal", function(event) {
     // Get the button that triggered the modal
     const button = $(event.relatedTarget);
-    const teamObj = {
+
+    // Reset values
+    let teamObj = null;
+    $(this)
+      .find(".modal-email")
+      .html("");
+    $(this)
+      .find(".modal-website")
+      .html("");
+    $(this)
+      .find(".modal-facebook")
+      .html("");
+    $(this)
+      .find(".modal-linkedin")
+      .html("");
+    $(this)
+      .find(".modal-weibo")
+      .html("");
+
+    teamObj = {
       name: button.siblings(".team-member__name").text(),
       pos: button.siblings(".team-member__pos").text(),
       why: button.siblings(".team-member__why").text(),
       email: $.trim(button.siblings(".team-member__email").text()),
-      web: $.trim(button.siblings(".team-member__website").text())
+      web: $.trim(button.siblings(".team-member__website").text()),
+      fb: $.trim(button.siblings(".team-member__facebook").text()),
+      in: $.trim(button.siblings(".team-member__linkedin").text()),
+      wb: $.trim(button.siblings(".team-member__weibo").text())
     };
 
-    $(this)
-      .find(".modal-title")
-      .text(teamObj.name);
-    $(this)
-      .find(".modal-pos")
-      .text(teamObj.pos);
-    $(this)
-      .find(".modal-info")
-      .text(teamObj.why);
-    $(this)
-      .find(".modal-email")
-      .text(teamObj.email)
-      .prop("href", `mailto:${teamObj.email}`);
-    $(this)
-      .find(".modal-web")
-      .text(teamObj.web)
-      .prop("href", teamObj.web);
+    for (let key of Object.keys(teamObj)) {
+      let val = teamObj[key];
+      if (key === "name" && val) {
+        $(this)
+          .find(".modal-title")
+          .text(teamObj.name);
+      }
+      if (key === "pos" && val) {
+        $(this)
+          .find(".modal-pos")
+          .text(teamObj.pos);
+      }
+      if (key === "why" && val) {
+        $(this)
+          .find(".modal-why")
+          .text(teamObj.why);
+      }
+      if (key === "email" && val) {
+        $(this)
+          .find(".modal-email")
+          .html(`<a href="mailto:${teamObj.email}">${teamObj.email}</a>`);
+      }
+      if (key === "web" && val) {
+        $(this)
+          .find(".modal-website")
+          .html(
+            `<a href="${teamObj.web}" target="_blank" rel="noopener noreferrer">${teamObj.web}</a>`
+          );
+      }
+      if (key === "fb" && val) {
+        $(this)
+          .find(".modal-facebook")
+          .html(
+            `<a href="${teamObj.fb}" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>`
+          );
+      }
+      if (key === "in" && val) {
+        $(this)
+          .find(".modal-linkedin")
+          .html(
+            `<a href="${teamObj.in}" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>`
+          );
+      }
+      if (key === "wb" && val) {
+        $(this)
+          .find(".modal-weibo")
+          .html(
+            `<a href="${teamObj.wb}" target="_blank" rel="noopener noreferrer"><i class="fab fa-weibo"></i></a>`
+          );
+      }
+    }
   });
 });
 
