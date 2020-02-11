@@ -101,7 +101,9 @@
     <div class="col-md-8">
       <div class="d-flex">
         <?php if ($event_url) { ?>
+          <!-- Hide qrcode and script if there is no event link -->
           <div id="qrcode"></div>
+          <script type="application/json" id="event_url"><?= json_encode( $event_url, JSON_UNESCAPED_SLASHES ) ?></script>
         <?php } ?>
   
         <table class="table table-sm table-borderless table-event">
@@ -150,7 +152,6 @@
       </div>
     </div>
   </div>
-  <script type="application/json" id="event_url"><?= json_encode( $event_url, JSON_UNESCAPED_SLASHES ) ?></script>
   <?php endif; ?>
 
   <?php if( $partners ): ?>
