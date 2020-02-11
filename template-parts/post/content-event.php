@@ -119,7 +119,7 @@
             ?>
             <tr>
               <th scope="row">
-                <i class="far fa-calendar-alt"></i>
+                <i class="fas fa-calendar-alt"></i>
               </th>
               <td>
                 <span><?php echo $date->format('j M Y'); ?></span> 
