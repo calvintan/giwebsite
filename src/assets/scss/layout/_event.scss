@@ -1,0 +1,44 @@
+.c-post {
+  &__event-info {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    li {
+      font-size: 1.125rem;
+      margin-bottom: 0.125rem;
+    }
+  }
+  &__event-table table {
+    th {
+      width: 40px;
+    }
+    span {
+      display: block;
+    }
+  }
+}
+
+#qrcode {
+  margin: 0 1.25rem 1.25rem 0;
+}
+
+.table-event {
+  width: max-content;
+
+  tr:first-child {
+    th,
+    td {
+      padding-top: 0;
+    }
+  }
+  th,
+  td {
+    padding: 0.5rem;
+  }
+  td span {
+    display: block;
+    margin-bottom: 0.125rem;
+  }
+}
