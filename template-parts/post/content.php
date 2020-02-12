@@ -1,25 +1,19 @@
 <article <?php post_class('c-post mb-4'); ?>>
+  <?php if(is_single()) { ?>
   <div class="row">
     <div class="col-md-12">
       <header class="c-post__header">
-        <?php if(is_single()) { ?>
           <h1 class="c-post__single-title">
             <?php the_title();?>
           </h1>
-        <?php } else { ?>
-          <h2 class="c-post__title">
-            <a 
-              href="<?php the_permalink(); ?>" 
-              title="<?php the_title_attribute(); ?>">
-              <?php the_title();?></a>
-          </h2>
-        <?php } ?>
-      </header>
+        </header>
+      </div>
     </div>
-  </div>
+  <?php } ?>
   
   <div class="row">
-    <div class="col-md-8 offset-md-4">
+    <div class="
+      col-md-8 <?php if(is_single()) { ?>offset-md-4<?php } ?>">
       <div class="c-post__inner">
         <?php if(get_the_post_thumbnail() !== '') { ?>
           <div class="c-post__thumbnail">
@@ -32,6 +26,12 @@
             <?php the_content(); ?>
           </div>
         <?php } else { ?>
+          <h3 class="c-post__title">
+            <a 
+              href="<?php the_permalink(); ?>" 
+              title="<?php the_title_attribute(); ?>">
+              <?php the_title();?></a>
+          </h3>
           <div class="c-post__excerpt">
             <?php the_excerpt(); ?>
           </div>

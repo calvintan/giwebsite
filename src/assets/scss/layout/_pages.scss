@@ -19,3 +19,16 @@
 .page__header {
   margin-bottom: 3rem;
 }
+
+.search-results {
+  line-height: 1.8;
+
+  .c-post__thumbnail {
+    margin-bottom: 2rem;
+  }
+
+  .c-post__readmore {
+    color: $black;
+    text-decoration: underline;
+  }
+}
