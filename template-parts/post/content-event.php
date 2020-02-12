@@ -148,6 +148,7 @@
             </tr>
             <tr>
               <td colspan="2" class="map-links">
+                <a href="http://api.map.baidu.com/marker?location=<?php echo $latitude; ?>,<?php echo $longitude; ?>&output=html" rel="noopener noreferrer" target="_blank">View on Baidu Maps</a>
                 <a href="https://google.com/maps/@<?php echo $latitude; ?>,<?php echo $longitude; ?>,14z" rel="noopener noreferrer" target="_blank">View on Google Maps</a>
               </td>
             </tr>
