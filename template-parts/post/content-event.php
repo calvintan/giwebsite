@@ -146,6 +146,11 @@
                 <span><?php the_field('location_metro', $l->ID); ?></span>
               </td>
             </tr>
+            <tr>
+              <td colspan="2" class="map-links">
+                <a href="https://google.com/maps/@<?php echo $latitude; ?>,<?php echo $longitude; ?>,14z" rel="noopener noreferrer" target="_blank">View on Google Maps</a>
+              </td>
+            </tr>
           <?php endforeach; ?>
           </tbody>
         </table>
