@@ -1,16 +1,9 @@
 <?php get_header(); ?>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-8">
-      <main role="main">
-        <?php get_template_part('loop', 'single'); ?>
-      </main>
-    </div>
-    <div class="col-md-4">
-      <?php get_sidebar(); ?>
-    </div>
+<main role="main">
+  <div class="container my-5">
+    <?php get_template_part('loop', 'single'); ?>
   </div>
-</div>
+</main>
 
 <?php get_footer(); ?>
