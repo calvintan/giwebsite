@@ -129,3 +129,39 @@
     }
   }
 }
+
+.share-buttons {
+  list-style-type: none;
+  text-align: left;
+  padding: 0;
+  margin-top: 2rem;
+
+  &:before {
+    content: "Share";
+    display: inline-block;
+    margin-right: 1rem;
+  }
+
+  li {
+    display: inline-block;
+
+    & + li {
+      margin-left: 1rem;
+    }
+  }
+
+  a {
+    font-size: 1.25rem;
+    color: $black;
+    opacity: 0.6;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  @media (min-width: 768px) {
+    text-align: right;
+    margin-top: 0;
+  }
+}

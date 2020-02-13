@@ -143,6 +143,12 @@ $(document).ready(() => {
       }
     }
   });
+
+  $(".share-button").click(function(e) {
+    e.preventDefault();
+    let link = $(this).attr("href");
+    window.open(link, "", "width=600,height=300");
+  });
 });
 
 $(document).keyup(function(e) {

@@ -43,6 +43,7 @@
       <?php } ?>
     </div>
     <div class="col-md-8">
+      <?php share_buttons(); ?>
       <?php if(get_the_post_thumbnail() !== '') { ?>
         <div class="c-post__thumbnail">
           <?php the_post_thumbnail('large'); ?>
