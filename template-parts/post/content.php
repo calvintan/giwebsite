@@ -15,6 +15,9 @@
     <div class="
       col-md-8 <?php if(is_single()) { ?>offset-md-4<?php } ?>">
       <div class="c-post__inner">
+        <?php if(is_single()) { 
+          share_buttons();
+        } ?>
         <?php if(get_the_post_thumbnail() !== '') { ?>
           <div class="c-post__thumbnail">
             <?php the_post_thumbnail('large'); ?>
