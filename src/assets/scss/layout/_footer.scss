@@ -30,3 +30,27 @@
     margin-bottom: 0.5rem;
   }
 }
+
+.mc4wp-form-fields {
+  display: flex;
+
+  input[type="email"] {
+    border: 0;
+    padding: 0.375rem 0.5rem;
+    font-size: 0.875rem;
+    color: $white;
+    background: rgba(255, 255, 255, 0.25);
+
+    @media (min-width: 768px) {
+      max-width: 150px;
+    }
+  }
+
+  input[type="submit"] {
+    border: 0;
+    padding: 1px 0.625rem 0;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.75);
+  }
+}
