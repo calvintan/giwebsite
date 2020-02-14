@@ -91,10 +91,15 @@ body {
   }
 }
 
-.nav__language {
-  img {
-    max-width: 22px;
-    height: auto;
+.m__language {
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+
+  a {
+    text-decoration: none;
   }
 }
 

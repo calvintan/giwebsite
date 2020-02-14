@@ -56,11 +56,7 @@
       <div class="nav__search">
         <?php get_search_form(true); ?>
       </div>
-
-      <!-- <a class="nav__language" href="#">
-        <img src="<?php bloginfo('stylesheet_directory'); ?>/dist/assets/images/gi-zh.png" alt="">
-      </a> -->
-
+      
       <?php dynamic_sidebar( 'language' ); ?>
     </div>  
   </nav>
