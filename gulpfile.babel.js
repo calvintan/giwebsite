@@ -28,7 +28,7 @@ const paths = {
     dest: "dist/assets/images"
   },
   scripts: {
-    src: ["src/assets/js/bundle.js"],
+    src: ["src/assets/js/bundle.js", "src/assets/js/qrcode.min.js"],
     dest: "dist/assets/js"
   },
   others: {
