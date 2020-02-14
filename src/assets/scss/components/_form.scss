@@ -1,0 +1,19 @@
+.wpcf7 {
+  text-transform: uppercase;
+}
+
+.wpcf7-radio,
+.wpcf7-checkbox {
+  .wpcf7-list-item {
+    display: block;
+    margin: 0;
+  }
+
+  .wpcf7-list-item-label {
+    margin-left: 0.5rem;
+  }
+}
+
+.form-hidden-field {
+  display: none;
+}

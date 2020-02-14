@@ -149,6 +149,29 @@ $(document).ready(() => {
     let link = $(this).attr("href");
     window.open(link, "", "width=600,height=300");
   });
+
+  const form_interest_last = $("#form-interest .wpcf7-list-item.last input");
+  const form_interest_other = $("#form-interest-other");
+
+  const form_found = $("#form-found");
+  const form_found_other = $("#form-found-other");
+
+  form_interest_last.on("click", function() {
+    if ($(this).is(":checked")) {
+      form_interest_other.show();
+    } else {
+      form_interest_other.hide();
+    }
+  });
+
+  form_found.on("click", function() {
+    let radioText = $('input[name="form-found"]:checked').val();
+    if (radioText == "Other") {
+      form_found_other.show();
+    } else {
+      form_found_other.hide();
+    }
+  });
 });
 
 $(document).keyup(function(e) {
