@@ -5,11 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <?php wp_head(); ?>
-  <style>
-    #wpadminbar {
-      display: none;
-    }
-  </style>
 </head>
 <body <?php body_class(); ?>>
 <div id="manifesto">
@@ -38,27 +33,27 @@
     </nav>
   </div>
 </div>
-<header role="banner">
-  <nav class="nav__main <?php if(is_front_page()) { echo "fixed-top"; } ?>" role="navigation">
-    <div class="nav__wrapper">
-      <a class="nav__btn" href="#">
-        <img src="<?php bloginfo('stylesheet_directory'); ?>/dist/assets/images/menu.png" alt="">
-      </a>
+<div class="site-wrap">
+  <header role="banner">
+    <nav class="nav__main" role="navigation">
+      <div class="nav__wrapper">
+        <a class="nav__btn" href="#">
+          <img src="<?php bloginfo('stylesheet_directory'); ?>/dist/assets/images/menu.png" alt="">
+        </a>
 
-      <a class="nav__manifesto" href="#">Manifesto</a>
+        <a class="nav__manifesto" href="#">Manifesto</a>
 
-      <a class="nav__logo" href="<?php echo esc_url(home_url('/')); ?>">
-        <img src="<?php bloginfo('stylesheet_directory'); ?>/dist/assets/images/gi-logo.png" alt="<?php esc_html(bloginfo('name')); ?>">
-      </a>
+        <a class="nav__logo" href="<?php echo esc_url(home_url('/')); ?>">
+          <img src="<?php bloginfo('stylesheet_directory'); ?>/dist/assets/images/gi-logo.png" alt="<?php esc_html(bloginfo('name')); ?>">
+        </a>
 
-      <a class="nav__link" href="#">seedsofchange.me</a>
+        <a class="nav__link" href="#">seedsofchange.me</a>
 
-      <div class="nav__search">
-        <?php get_search_form(true); ?>
-      </div>
-      
-      <?php dynamic_sidebar( 'language' ); ?>
-    </div>  
-  </nav>
-</header>
+        <div class="nav__search">
+          <?php get_search_form(true); ?>
+        </div>
 
+        <?php dynamic_sidebar( 'language' ); ?>
+      </div>  
+    </nav>
+  </header>
