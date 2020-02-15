@@ -1,35 +1,38 @@
 <?php get_header(); ?>
 
+<?php
+  $args = array(
+    'post_type' => 'slider',
+    'posts_per_page' => -1,
+    'order' => 'ASC',
+    'orderby' => 'title'
+  );
+  $slider = new WP_Query( $args );
+?>
 <div id="carousel-homepage" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
-    <li data-target="#carousel-homepage" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-homepage" data-slide-to="1"></li>
-    <li data-target="#carousel-homepage" data-slide-to="2"></li>
-    <li data-target="#carousel-homepage" data-slide-to="3"></li>
+    <?php if($slider->have_posts()) { ?>
+      <?php while($slider->have_posts()) { ?>
+        <?php $slider->the_post(); ?>
+        <li data-target="#carousel-homepage" data-slide-to="<?php echo $slider->current_post; ?>" class="<?php echo ( $slider->current_post == 0 ) ? 'active' : '' ?>"></li>
+      <?php } ?>
+    <?php } ?>
   </ol>
+  <?php rewind_posts(); ?>
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <div class="container">
-        <p>Eleven years of initiating positive changes towards a greener China</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class="container">
-        <p>Eleven years of eco-learning and actions for a greener China</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class="container">
-        <p>700+ community and corporate activities attended by 30,000+ people</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class="container">
-        <p>We are creating a world where individuals can live healthily, in harmony with nature</p>
-      </div>
-    </div>
+    <?php if($slider->have_posts()) { ?>
+      <?php while($slider->have_posts()) { ?>
+        <?php $slider->the_post(); ?>
+        <div class="carousel-item <?php echo ( $slider->current_post == 0 ) ? 'active' : '' ?>">
+          <div class="container">
+            <?php the_content(); ?>
+          </div>
+        </div>
+      <?php } ?>
+    <?php } ?>
   </div>
 </div>
+<?php wp_reset_postdata(); ?>
 
 <div class="container my-5">
   <div class="row">
