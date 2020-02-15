@@ -43,6 +43,17 @@ body {
   }
 }
 
+@media (min-width: 576px) {
+  .hide_desktop {
+    display: none;
+  }
+}
+@media (max-width: 575px) {
+  .hide_mobile {
+    display: none;
+  }
+}
+
 .nav__manifesto {
   text-transform: uppercase;
   padding: 0 1.5rem;

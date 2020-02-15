@@ -44,7 +44,8 @@
         <a class="nav__manifesto" href="#">Manifesto</a>
 
         <a class="nav__logo" href="<?php echo esc_url(home_url('/')); ?>">
-          <img src="<?php bloginfo('stylesheet_directory'); ?>/dist/assets/images/gi-logo.png" alt="<?php esc_html(bloginfo('name')); ?>">
+          <img class="hide_mobile" src="<?php bloginfo('stylesheet_directory'); ?>/dist/assets/images/gi-logo.png" alt="<?php esc_html(bloginfo('name')); ?>">
+          <img class="hide_desktop" src="<?php bloginfo('stylesheet_directory'); ?>/dist/assets/images/gi-icon.png" alt="<?php esc_html(bloginfo('name')); ?>">
         </a>
 
         <a class="nav__link" href="#">seedsofchange.me</a>
