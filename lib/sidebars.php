@@ -23,7 +23,7 @@ function _themename_sidebar_widgets() {
   register_sidebar( array(
     'id'            => 'language',
     'name'          => 'Language',
-    'before_widget' => '<section class="m__language">',
+    'before_widget' => '<section class="nav__language">',
     'after_widget'  => '</section>',
     'before_title'  => '<h4>',
     'after_title'   => '</h4>',
