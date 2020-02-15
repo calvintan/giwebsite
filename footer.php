@@ -18,18 +18,19 @@
         <div class="col-md-12">
           <div class="f-copyright">
             <div class="f-copyright__left">
-              <span>Designed by <a href="#">Matter</a></span>
-              <span>Developed by <a href="#">Codesmiths</a></span>
+              <span>Designed by <a href="http://www.matter-sh.com" target="_blank" rel="noopener noreferrer">Matter</a></span>
+              <span>Developed by <a href="https://www.codesmiths.co"  target="_blank" rel="noopener noreferrer">Codesmiths</a></span>
             </div>
             <div class="f-copyright__center"></div>
             <div class="f-copyright__right">
-              <span>沪ICP备123456号 &copy; <?php echo date( 'Y' ) ?> Green Initiatives</span>
+              <span>沪ICP备16054688号 &copy; <?php echo date( 'Y' ) ?> Green Initiatives</span>
             </div>
           </div>
         </div>
       </div>
     </div>
   </footer>
-  <?php wp_footer(); ?>
+</div>
+<?php wp_footer(); ?>
 </body>
 </html>
