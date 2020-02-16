@@ -24,6 +24,12 @@
   }
 }
 
+.event-section {
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
+}
+
 #qrcode {
   margin: 0 1.25rem 1.25rem 0;
 }

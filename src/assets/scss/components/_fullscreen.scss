@@ -1,5 +1,4 @@
 #menu-fullscreen {
-  display: block;
   position: fixed;
   top: 0;
   left: -360px;
@@ -31,6 +30,7 @@ body.show-nav {
 }
 
 .site-wrap {
+  position: relative;
   transition: transform 0.25s ease-out;
 }
 

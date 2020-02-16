@@ -100,7 +100,7 @@
       </div>
     </div>
     <div class="col-md-8">
-      <div class="d-flex">
+      <div class="d-flex event-section">
         <?php if ($event_url) { ?>
           <!-- Hide qrcode and script if there is no event link -->
           <div id="qrcode"></div>
