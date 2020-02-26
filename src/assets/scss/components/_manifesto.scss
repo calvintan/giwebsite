@@ -13,13 +13,13 @@
 }
 
 .show-manifesto #manifesto {
-  z-index: 9999;
+  z-index: 10000;
   opacity: 1;
   visibility: visible;
 }
 
 .hide-manifesto #manifesto {
-  z-index: 9999;
+  z-index: 10000;
   opacity: 0;
   visibility: hidden;
 }
