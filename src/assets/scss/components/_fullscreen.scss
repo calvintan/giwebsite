@@ -7,7 +7,7 @@
   overflow: hidden;
   background-color: $brown-dark;
   z-index: -1;
-  transition: left 0.25s ease-out;
+  transition: left 0.2s ease-out;
   padding: 2.5rem 0.625rem;
 
   @media (max-width: 575px) {
@@ -31,15 +31,16 @@ body.show-nav {
 
 .site-wrap {
   position: relative;
-  transition: transform 0.25s ease-out;
+  left: 0;
+  transition: left 0.2s ease-out;
 }
 
 .show-nav .site-wrap {
-  transform: translateX(360px);
+  left: 360px;
   overflow-x: hidden;
 
   @media (max-width: 575px) {
-    transform: translateX(100%);
+    left: 100%;
   }
 }
 

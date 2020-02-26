@@ -5,6 +5,12 @@ body {
 .nav__main {
   background: $brown-fade;
   padding: 0.5rem 1.5rem;
+
+  &.fixed-top {
+    left: auto;
+    right: auto;
+    width: 100%;
+  }
 }
 
 .nav__wrapper {

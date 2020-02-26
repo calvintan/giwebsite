@@ -35,7 +35,7 @@
 </div>
 <div class="site-wrap">
   <header role="banner">
-    <nav class="nav__main" role="navigation">
+    <nav class="nav__main <?php if(is_front_page()) { echo "fixed-top"; } ?>" role="navigation">
       <div class="nav__wrapper">
         <a class="nav__btn" href="#">
           <img src="<?php bloginfo('stylesheet_directory'); ?>/dist/assets/images/menu.png" alt="">
