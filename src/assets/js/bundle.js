@@ -23,7 +23,7 @@ $(document).ready(() => {
     return false;
   });
 
-  $(".nav__manifesto, .m__btn").click(function() {
+  $(".nav__manifesto, .m__close").click(function() {
     if ($("body").hasClass("show-manifesto")) {
       $("body")
         .removeClass("show-manifesto")
