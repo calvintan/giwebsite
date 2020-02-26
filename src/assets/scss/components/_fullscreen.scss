@@ -76,8 +76,9 @@ body.show-nav {
 }
 
 #menu-fullscreen .nav__search {
+  display: none;
   max-width: 400px;
-  margin: 3rem 0;
+  margin-top: 3rem;
 
   form {
     padding: 0.5rem;
@@ -95,6 +96,10 @@ body.show-nav {
     max-width: none;
     font-size: 1rem;
   }
+
+  @media (max-width: 575px) {
+    display: block;
+  }
 }
 
 #menu-main-menu {
@@ -103,7 +108,7 @@ body.show-nav {
   text-transform: uppercase;
   font-size: 3rem;
   line-height: 1.2;
-  margin-bottom: 3rem;
+  margin: 3rem 0;
 
   a {
     color: $white;
