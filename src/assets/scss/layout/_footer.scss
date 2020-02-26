@@ -51,6 +51,11 @@
     color: $white;
     background: rgba(255, 255, 255, 0.25);
 
+    &::placeholder {
+      color: $white;
+      opacity: 0.5;
+    }
+
     @media (min-width: 768px) {
       max-width: 150px;
     }

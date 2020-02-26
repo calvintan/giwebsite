@@ -79,6 +79,11 @@ body {
     font-size: 0.875rem;
     color: $white;
     background: transparent;
+
+    &::placeholder {
+      color: $white;
+      opacity: 0.5;
+    }
   }
 
   .search-submit {
