@@ -48,7 +48,7 @@
           <img class="hide_desktop" src="<?php bloginfo('stylesheet_directory'); ?>/dist/assets/images/gi-icon.png" alt="<?php esc_html(bloginfo('name')); ?>">
         </a>
 
-        <a class="nav__link" href="#">seedsofchange.me</a>
+        <a class="nav__link" href="https://www.seedsofchange.me/" target="_blank" rel="noopener noreferrer">seedsofchange.me</a>
 
         <div class="nav__search">
           <?php get_search_form(true); ?>
