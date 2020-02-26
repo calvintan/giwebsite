@@ -4,7 +4,9 @@ import "../../../node_modules/bootstrap/dist/js/bootstrap.bundle";
 import "../../../node_modules/jquery.ripples/dist/jquery.ripples-min";
 
 $(document).ready(() => {
-  $(".nav__btn, .menu-close").click(function() {
+  $(".nav__btn").click(function() {
+    $(this).toggleClass("animate");
+
     if ($("body").hasClass("show-nav")) {
       $("body")
         .removeClass("show-nav")

@@ -24,7 +24,6 @@
 </div>
 <div id="menu-fullscreen">
   <div class="container-fluid">
-    <a href="#" class="menu-close"></a>
     <div class="nav__search">
       <?php get_search_form(true); ?>
     </div>
@@ -33,13 +32,13 @@
     </nav>
   </div>
 </div>
+<div class="menu-btn">
+  <a class="nav__btn" href="#"></a>
+</div>
 <div class="site-wrap">
   <header role="banner">
-    <nav class="nav__main <?php if(is_front_page()) { echo "fixed-top"; } ?>" role="navigation">
+    <nav class="nav__main fixed-top" role="navigation">
       <div class="nav__wrapper">
-        <a class="nav__btn" href="#">
-          <img src="<?php bloginfo('stylesheet_directory'); ?>/dist/assets/images/menu.png" alt="">
-        </a>
 
         <a class="nav__manifesto" href="#">Manifesto</a>
 
