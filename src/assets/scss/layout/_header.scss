@@ -112,6 +112,10 @@ body {
   a {
     text-decoration: none;
   }
+
+  a[lang="en-US"] {
+    font-size: 0.75rem;
+  }
 }
 
 @media (max-width: 1000px) {
