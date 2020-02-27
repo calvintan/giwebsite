@@ -1,7 +1,9 @@
 <article <?php post_class('c-post mb-4 col-md-4'); ?>>
   <?php if(get_the_post_thumbnail() !== '') { ?>
     <div class="c-post__thumbnail">
-      <?php the_post_thumbnail('large'); ?>
+      <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+        <?php the_post_thumbnail('large'); ?>
+      </a>
     </div>
   <?php } ?>
 
@@ -28,10 +30,7 @@
 
   <div class="c-post__card">
     <h3 class="c-post__title">
-      <a
-        href="<?php the_permalink(); ?>"
-        title="<?php the_title_attribute(); ?>">
-        <?php the_title();?></a>
+      <?php the_title();?>
     </h3>
     <p><?php echo get_excerpt(); ?></p>
   </div>
