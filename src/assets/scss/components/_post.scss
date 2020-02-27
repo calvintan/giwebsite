@@ -12,27 +12,27 @@
   }
 
   &.sticky {
-    border-left: 5px solid $primary-colour;
+    border-left: 5px solid $black;
   }
   &.format-quote {
     blockquote {
-      background-color: $primary-colour;
-      color: #fff;
+      background-color: $black;
+      color: $white;
       padding: 20px;
       font-size: 16px;
       a {
-        color: #fff;
+        color: $white;
       }
     }
   }
   &.format-link {
     .c-post__excerpt p {
-      background-color: $primary-colour;
+      background-color: $black;
       padding: 20px;
       font-size: 16px;
       text-align: center;
       a {
-        color: #fff;
+        color: $white;
       }
     }
   }
@@ -86,16 +86,16 @@
     text-align: center;
   }
   &__excerpt {
-    color: $brown-text;
+    color: $brown-dark;
   }
   &__meta {
-    color: $brown-text;
+    color: $brown-dark;
   }
   &__title {
     font-weight: 600;
     font-size: 1.5rem;
     a {
-      color: $brown-text;
+      color: $brown-dark;
       border-bottom: none;
     }
   }
@@ -103,7 +103,7 @@
     font-weight: 600;
     font-size: 2rem;
     a {
-      color: $brown-text;
+      color: $brown-dark;
       border-bottom: none;
     }
   }
@@ -126,6 +126,14 @@
       width: 35px;
       background: $black;
       margin: 1rem 0;
+    }
+  }
+
+  a {
+    color: $brown-link;
+
+    &:hover {
+      color: #745340;
     }
   }
 }
