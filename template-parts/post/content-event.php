@@ -53,7 +53,7 @@
   </div>
 
   <?php if(get_field('event_subtitle_one') && get_field('event_content_one')): ?>
-  <div class="row mt-5">
+  <div class="row mt-4">
     <div class="col-md-4">
       <div class="project-subtitle">
         <?php the_field('event_subtitle_one'); ?>
@@ -68,7 +68,7 @@
   <?php endif; ?>
 
   <?php if(get_field('event_subtitle_two') && get_field('event_content_two')): ?>
-  <div class="row mt-5">
+  <div class="row mt-4">
     <div class="col-md-4">
       <div class="project-subtitle">
         <?php the_field('event_subtitle_two'); ?>
@@ -82,7 +82,7 @@
   </div>
   <?php endif; ?>
   
-  <div class="row mt-5">
+  <div class="row mt-4">
     <div class="col-md-8 offset-md-4">
       <div class="c-post__inner">
         <div class="c-post__content">
@@ -93,7 +93,7 @@
   </div>
 
   <?php if ($location): ?>
-  <div class="row mt-5">
+  <div class="row mt-4">
     <div class="col-md-4">
       <div class="project-subtitle">
         Event Details
@@ -162,7 +162,7 @@
   <?php endif; ?>
 
   <?php if( $partners ): ?>
-  <div class="row mt-5">
+  <div class="row mt-4">
     <div class="col-md-4">
       <div class="project-subtitle">
         Partners
