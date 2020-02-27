@@ -87,3 +87,18 @@
   border: 2px solid $white;
   padding: 0.5rem;
 }
+
+.cf-flex {
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .cf-flex {
+    display: flex;
+
+    .cf-left,
+    .cf-right {
+      flex-basis: 50%;
+    }
+  }
+}
