@@ -72,3 +72,34 @@
     margin-bottom: 28px;
   }
 }
+
+.blog main .page__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.news-sidebar {
+  h4 {
+    display: none;
+  }
+
+  form {
+    display: inline-block;
+    background-color: $brown-dark;
+    padding: 10px;
+    border-radius: 20px;
+  }
+
+  select {
+    background-color: $brown-dark;
+    color: $white;
+    appearance: none;
+    text-indent: 30%;
+    border: 0;
+    font-size: 0.75rem;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

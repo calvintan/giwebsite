@@ -10,6 +10,15 @@ function _themename_sidebar_widgets() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>'
   ));
+
+  register_sidebar( array(
+    'id'            => 'news_sidebar',
+    'name'          => 'News Sidebar',
+    'before_widget' => '<section class="news-sidebar">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h4>',
+    'after_title'   => '</h4>',
+  ));
   
   register_sidebar( array(
     'id'            => 'manifesto',

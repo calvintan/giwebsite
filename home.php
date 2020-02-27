@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+
 <main role="main">
   <div class="container my-5">
     <div class="row">
@@ -7,6 +8,8 @@
           <h1 class="page__title">
             <?php single_post_title(); ?>
           </h1>
+
+          <?php dynamic_sidebar( 'news_sidebar' ); ?>
         </header>
       </div>
     </div>

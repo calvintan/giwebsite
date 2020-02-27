@@ -50,4 +50,10 @@ function share_buttons() {
   include( locate_template('share-template.php', false, false) );
 }
 
+function change_select_title($cat_args){
+$cat_args['show_option_none'] = __('Filter');
+return $cat_args;
+}
+add_filter('widget_categories_dropdown_args', 'change_select_title');
+
 ?>
