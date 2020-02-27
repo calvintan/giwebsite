@@ -1,5 +1,12 @@
 .c-post {
   &__card {
+    margin-bottom: 1rem;
+    transition: box-shadow ease 0.2s;
+    &:hover {
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+    }
+  }
+  &__card-desc {
     background: $white;
     padding: 20px;
 
