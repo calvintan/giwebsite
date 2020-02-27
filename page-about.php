@@ -2,6 +2,11 @@
 
 <main role="main">
   <div class="container my-5">
+
+  <?php if(have_posts()) { ?>
+    <?php while(have_posts()) { ?>
+      <?php the_post(); ?>
+
     <div class="row">
       <div class="col-md-12">
         <header class="page__header">
@@ -20,6 +25,9 @@
       </div>
     </div>
 
+    <?php } ?>
+  <?php } ?>
+
     <?php 
       $args = array( 
         'post_type' => 'member',
@@ -35,9 +43,9 @@
     <?php if( $team_query->have_posts() ): ?>
       <div class="team">
         <header class="page__header">
-          <h1 class="page__title">
+          <h2 class="page__subtitle">
             Our Team
-          </h1>
+          </h2>
         </header>
   
         <div class="row">
@@ -93,9 +101,9 @@
     <?php if( $query->have_posts() ): ?>
       <div class="volunteers">
         <header class="page__header">
-          <h1 class="page__title">
+          <h2 class="page__subtitle">
             Volunteers
-          </h1>
+          </h2>
         </header>
   
         <div class="row">
