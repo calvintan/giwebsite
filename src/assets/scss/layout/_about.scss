@@ -10,7 +10,7 @@
 
   img {
     height: auto;
-    margin-bottom: 1rem;
+    border-radius: 50%;
     filter: grayscale(1);
     transition: filter 0.5s ease-out;
 
@@ -23,8 +23,13 @@
     }
   }
 
+  a {
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
   &__name {
-    margin: 0;
+    margin: 0 0 0.25rem;
   }
 
   &__pos {
