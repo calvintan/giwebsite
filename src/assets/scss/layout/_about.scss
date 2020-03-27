@@ -6,14 +6,20 @@
 .team-member {
   margin-bottom: 2rem;
   line-height: 1.4;
+  text-align: center;
 
   img {
+    height: auto;
     margin-bottom: 1rem;
     filter: grayscale(1);
     transition: filter 0.5s ease-out;
 
     &:hover {
       filter: grayscale(0);
+    }
+
+    @media (min-width: 992px) {
+      min-width: 200px;
     }
   }
 
