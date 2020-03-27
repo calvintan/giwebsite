@@ -113,13 +113,15 @@ $(document).ready(() => {
       if (key === "email" && val) {
         $(this)
           .find(".modal-email")
-          .html(`<a href="mailto:${teamObj.email}">${teamObj.email}</a>`);
+          .html(
+            `<a href="mailto:${teamObj.email}"><i class="fas fa-envelope"></i></a>`
+          );
       }
       if (key === "web" && val) {
         $(this)
           .find(".modal-website")
           .html(
-            `<a href="${teamObj.web}" target="_blank" rel="noopener noreferrer">${teamObj.web}</a>`
+            `<a href="${teamObj.web}" target="_blank" rel="noopener noreferrer"><i class="fas fa-globe"></i></a>`
           );
       }
       if (key === "fb" && val) {

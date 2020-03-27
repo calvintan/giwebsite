@@ -164,11 +164,9 @@
               </div>
               <div class="col-md-8">
                 <p class="modal-why"></p>
-                <ul class="modal-info">
+                <ul class="modal-social">
                   <li class="modal-email"></li>
                   <li class="modal-website"></li>
-                </ul>
-                <ul class="modal-social">
                   <li class="modal-facebook"></li>
                   <li class="modal-linkedin"></li>
                   <li class="modal-weibo"></li>
