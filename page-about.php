@@ -102,7 +102,7 @@
       <div class="volunteers">
         <header class="page__header">
           <h2 class="page__subtitle">
-            Volunteers
+            Past Volunteers & Interns
           </h2>
         </header>
   
