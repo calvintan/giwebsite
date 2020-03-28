@@ -16,15 +16,19 @@
   <?php } ?>
   
   <div class="row">
+    <div class="col-md-12">
+      <?php if(get_the_post_thumbnail() !== '') { ?>
+        <div class="c-post__thumbnail">
+          <?php the_post_thumbnail('large'); ?>
+        </div>
+      <?php } ?>
+    </div>
+  </div>
+
+  <div class="row">
     <div class="
       col-md-8 <?php if(is_single()) { ?>offset-md-4<?php } ?>">
       <div class="c-post__inner">
-        <?php if(get_the_post_thumbnail() !== '') { ?>
-          <div class="c-post__thumbnail">
-            <?php the_post_thumbnail('large'); ?>
-          </div>
-        <?php } ?>
-
         <?php if(is_single()) { ?>
           <div class="c-post__content">
             <?php the_content(); ?>
