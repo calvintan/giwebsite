@@ -2,7 +2,7 @@
   <?php while(have_posts()) { ?>
     <?php the_post(); ?>
 
-    <?php if(is_home()) { ?>
+    <?php if(is_home() || is_archive()) { ?>
       <?php get_template_part('template-parts/page/content', 'cards'); ?>
     <?php } else { ?>
       <?php get_template_part('template-parts/post/content'); ?>
