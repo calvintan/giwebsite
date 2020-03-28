@@ -3,21 +3,22 @@
   <div class="row">
     <div class="col-md-12">
       <header class="c-post__header">
-          <h1 class="c-post__single-title">
-            <?php the_title();?>
-          </h1>
-        </header>
-      </div>
+        <h1 class="c-post__single-title">
+          <?php the_title();?>
+        </h1>
+        <div class="flex-items">
+          <p><?php _themename_post_meta(); ?></p>
+          <?php share_buttons(); ?>
+        </div>
+      </header>
     </div>
+  </div>
   <?php } ?>
   
   <div class="row">
     <div class="
       col-md-8 <?php if(is_single()) { ?>offset-md-4<?php } ?>">
       <div class="c-post__inner">
-        <?php if(is_single()) { 
-          share_buttons();
-        } ?>
         <?php if(get_the_post_thumbnail() !== '') { ?>
           <div class="c-post__thumbnail">
             <?php the_post_thumbnail('large'); ?>
