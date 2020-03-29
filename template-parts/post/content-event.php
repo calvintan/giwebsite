@@ -179,4 +179,17 @@
     </div>
   </div>
   <?php endif; ?>
+
+  <?php if(is_single()) { ?>
+    <footer class="c-post__footer">
+      <?php
+      if(has_tag()) {
+          echo '<div class="c-post__tags">';
+          $tags_list = get_the_tag_list( '<ul><li>', '</li><li>', '</li></ul>' );
+          echo $tags_list;
+          echo "</div>";
+      }
+      ?>
+    </footer>
+  <?php } ?>
 </article>
