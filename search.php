@@ -9,8 +9,10 @@
             <?php printf(esc_html__('Search results for: %s', '_themename'), get_search_query()); ?>
           </h1>
         </header>
-        <?php get_template_part('loop', 'search'); ?>
       </div>
+    </div>
+    <div class="row">
+      <?php get_template_part('loop', 'search'); ?>
     </div>
   </div>
 </main>
