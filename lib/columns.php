@@ -50,7 +50,12 @@
         break;
       case 'event_date':
         $date = get_post_meta ( $post_id, 'event_date', true );
-        echo date('j F Y', strtotime($date));
+        
+        if ( $date ) {
+          echo date('j F Y', strtotime($date));
+        } else {
+          esc_html_e( 'N/A', '_themename' );
+        }
         break;
       case 'event_start_time':
         echo get_post_meta ( $post_id, 'event_start_time', true );
@@ -61,6 +66,82 @@
     }
   }
   add_action ( 'manage_event_posts_custom_column', 'event_custom_column', 10, 2 );
+
+  /* Add event date to Quick Edit */
+  function quick_edit_add( $column_name, $post_type ) {
+    if ( 'event_date' != $column_name ) {
+      return;
+    }
+
+    $date = get_post_meta ( $post_id, 'event_date', true );
+    
+    printf('
+      <fieldset class="inline-edit-col-right">
+        <div class="inline-edit-col">
+            <label>
+                <span class="title">Event Date</span>
+                <span class="input-text-wrap">
+                    <input type="text" name="event_date" class="gieventdate value="">
+                </span>
+            </label>
+        </div>
+      </fieldset>'
+    );
+  }
+  add_action( 'quick_edit_custom_box', 'quick_edit_add', 10, 2 );
+
+  function save_quick_edit_post( $post_id, $post ) {
+    // if called by autosave, then bail here
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
+        return;
+
+    // if this "event" post type?
+    if ( $post->post_type != 'event' )
+        return;
+
+    // does this user have permissions?
+     if ( ! current_user_can( 'edit_post', $post_id ) )
+         return;
+
+    // update!
+    if ( isset( $_POST['event_date'] ) ) {
+        update_post_meta( $post_id, 'event_date', $_POST['event_date'] );
+    }
+  }
+  add_action( 'save_post', 'save_quick_edit_post', 10, 2 );
+
+  function quick_edit_javascript() {
+    $current_screen = get_current_screen();
+    if ( $current_screen->post_type != 'event' )
+        return;
+    ?>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function() {
+        jQuery('#the-list').on( 'click', 'button.editinline', function(e) {
+          e.preventDefault();
+          var eventDate = jQuery(this).data('event_date');
+          inlineEditPost.revert();
+          jQuery('.gieventdate').val(eventDate ? eventDate : '');
+        });
+      })
+    </script>
+    <?php
+  }
+  add_action( 'admin_enqueue_scripts', 'quick_edit_javascript' );
+
+  function quick_edit_set_data( $actions, $post ) {
+    $found_value = get_post_meta( $post->ID, 'event_date', true );
+
+    if ( $found_value ) {
+        if ( isset( $actions['inline hide-if-no-js'] ) ) {
+            $new_attribute = sprintf( 'data-event_date="%s"', esc_attr( $found_value ) );
+            $actions['inline hide-if-no-js'] = str_replace( 'class=', "$new_attribute class=", $actions['inline hide-if-no-js'] );
+        }
+    }
+
+    return $actions;
+  }
+  add_filter('post_row_actions', 'quick_edit_set_data', 10, 2);
 
   /* Custom columns for Project post type */
   function add_project_acf_columns ( $columns ) {
