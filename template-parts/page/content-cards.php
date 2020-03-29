@@ -16,14 +16,10 @@
       <div class="c-post__card-info">
         <ul>
           <li>
-            <span>
-              <?php echo $date->format('l'); ?>
-            </span>
+            <?php echo $date->format('j M Y'); ?>,
           </li>
           <li>
-            <span>
-              <?php echo $date->format('j F Y'); ?>
-            </span>
+            <?php echo $date->format('l'); ?>
           </li>
         </ul>
       </div>
