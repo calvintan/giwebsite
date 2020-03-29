@@ -64,4 +64,26 @@ function search_filter($query) {
 }
 add_filter('pre_get_posts', 'search_filter');
 
+function query_post_type($query) {
+	// We do not want unintended consequences.
+	if ( is_admin() || ! $query->is_main_query() ) {
+		return;
+	}
+
+	if ( is_category() || is_tag() && empty( $query->query_vars['suppress_filters'] ) ) {
+
+		// Replace these slugs with the post types you want to include.
+		$cptui_post_types = array( 'event' );
+
+		$query->set(
+      'post_type',
+      array_merge(
+				array( 'post' ),
+				$cptui_post_types
+			)
+		);
+	}
+}
+add_filter('pre_get_posts', 'query_post_type');
+
 ?>
