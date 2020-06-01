@@ -9,9 +9,11 @@
   &__card-desc {
     background: $white;
     padding: 20px;
+    min-height: 240px;
 
     h3 {
       line-height: 1.6;
+      text-transform: uppercase;
     }
 
     p {
@@ -33,6 +35,8 @@
       margin: 0;
       padding: 0;
       list-style: none;
+      display: flex;
+      justify-content: space-between;
     }
 
     li {

@@ -8,11 +8,23 @@
       color: #745340;
     }
   }
+
+  .past-events-link {
+    display: inline-block;
+    color: #524b47;
+    border-bottom: 1px solid #524b47;
+    padding-bottom: 0.25rem;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 
 .page__title {
-  font-size: 1rem;
+  font-size: 1.25rem;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
 
   &:after {
     content: "";
@@ -22,6 +34,11 @@
     background: $black;
     margin: 1rem 0;
   }
+}
+
+.page-about .page__subtitle {
+  font-size: 1.25rem;
+  letter-spacing: 0.5px;
 }
 
 .page__subtitle {
@@ -98,4 +115,84 @@
       outline: none;
     }
   }
+}
+
+.pagination .page-numbers {
+  display: inline-block;
+  background: #f1f1f1;
+  color: #666;
+  padding: 5px 10px;
+  margin-right: 5px;
+  text-transform: uppercase;
+  font-size: 14px;
+  text-decoration: none;
+
+  &:hover {
+    font-weight: 700;
+    color: #745340;
+  }
+
+  &.current {
+    font-weight: 700;
+  }
+}
+.press {
+  &:first-of-type .press-wrapper {
+    padding-top: 0;
+  }
+
+  .press-content a {
+    color: #000;
+  }
+
+  .press-content p {
+    margin-bottom: 0;
+  }
+}
+
+.press-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #bbb;
+}
+
+@media (min-width: 768px) {
+  .press-wrapper {
+    flex-direction: row;
+  }
+}
+
+.press-logo {
+  margin-right: 1.25rem;
+}
+
+.press-logo img {
+  max-width: 160px;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  .press-logo {
+    margin-bottom: 1rem;
+  }
+}
+
+.press-date {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+  list-style: none;
+  padding: 0;
+}
+
+.press-date li {
+  display: inline-block;
+}
+
+.press-date li + li:before {
+  content: "|";
+  display: inline-block;
+  margin: 0 4px;
 }
