@@ -6,7 +6,7 @@
       if(get_post_type() === 'event') {
         get_template_part( 'template-parts/post/content', 'event' );
       }
-      else if (get_post_type() === 'project') {
+      else if (get_post_type() === 'initiative') {
         get_template_part( 'template-parts/post/content', 'project' );
       }
       else if (get_post_type() === 'partner') {

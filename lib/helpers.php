@@ -69,7 +69,7 @@ add_filter('widget_categories_dropdown_args', 'change_select_title');
 
 function search_filter($query) {
   if ($query->is_search && !is_admin() ) {
-    $query->set('post_type', array('post', 'event', 'project'));
+    $query->set('post_type', array('post', 'event', 'initiative'));
   }
   return $query;
 }

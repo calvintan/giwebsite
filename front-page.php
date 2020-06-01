@@ -41,9 +41,9 @@
         <?php get_template_part('loop', 'page'); ?>
         <?php
           $event_exists = post_type_exists( 'event' );
-          $project_exists = post_type_exists( 'project' );
+          $project_exists = post_type_exists( 'initiative' );
           $event_count = wp_count_posts('event') -> publish;
-          $project_count = wp_count_posts('project') -> publish;
+          $project_count = wp_count_posts('initiative') -> publish;
         ?>
         <div class="lists-homepage">
           <?php if($event_exists && $event_count > 0) { ?>
@@ -76,11 +76,11 @@
         </div>
         <div class="lists-homepage">
           <?php if($project_exists && $project_count > 0) { ?>
-          <h2>Projects</h2>
+          <h2>Initiatives</h2>
           <div class="lists-wrapper">
             <?php
               $args = array(
-                'post_type' => 'project',
+                'post_type' => 'initiative',
                 'posts_per_page' => 4,
                 'meta_key'  => 'project_end_date',
                 'orderby' => 'meta_value_num',
@@ -100,7 +100,7 @@
               <?php get_template_part('template-parts/post/content', 'none'); ?>
             <?php } ?>
           </div>
-          <a class="lists-link" href="<?php echo home_url() ?>/projects">View All Projects</a>
+          <a class="lists-link" href="<?php echo home_url() ?>/initiatives">View All Initiatives</a>
           <?php } ?>
         </div>
       </main>

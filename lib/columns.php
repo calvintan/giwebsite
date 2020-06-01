@@ -143,17 +143,17 @@
   }
   add_filter('post_row_actions', 'quick_edit_set_data', 10, 2);
 
-  /* Custom columns for Project post type */
-  function add_project_acf_columns ( $columns ) {
+  /* Custom columns for Initiative post type */
+  function add_initiative_acf_columns ( $columns ) {
     return array_merge ( $columns, array ( 
       'photo' => __ ( 'Photo' ),
       'project_start_date' => __ ( 'Start Date' ),
       'project_end_date'   => __ ( 'End Date' ) 
     ) );
   }
-  add_filter ( 'manage_project_posts_columns', 'add_project_acf_columns' );
+  add_filter ( 'manage_initiative_posts_columns', 'add_initiative_acf_columns' );
 
-  function project_custom_column ( $column, $post_id ) {
+  function initiative_custom_column ( $column, $post_id ) {
     switch ( $column ) {
       case 'photo' :
         echo get_the_post_thumbnail( $post_id, 'feature-size' );
@@ -168,7 +168,7 @@
         break;
     }
   }
-  add_action ( 'manage_project_posts_custom_column', 'project_custom_column', 10, 2 );
+  add_action ( 'manage_initiative_posts_custom_column', 'initiative_custom_column', 10, 2 );
 
   /* Custom columns for Partner post type */
   function add_partner_acf_columns ( $columns ) {
