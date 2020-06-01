@@ -1,0 +1,195 @@
+# Copyright (C) 2020 giwebsite
+# This file is distributed under the same license as the giwebsite package.
+msgid ""
+msgstr ""
+"Project-Id-Version: giwebsite\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.2.4\n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:8
+msgid "Nothing found here, maybe you can try to search?"
+msgstr "没找到你要的页面，试试搜索？"
+
+#. translators: %s is the number of posts
+#: author.php:18, template-parts/single/author.php:26
+msgid "%s post"
+msgid_plural "%s posts"
+msgstr[0] ""
+
+#: footer.php:27
+msgid "Designed by"
+msgstr "网站设计者"
+
+#: footer.php:28
+msgid "Developed by"
+msgstr "网站开发者"
+
+#: footer.php:32
+msgid "Green Initiatives"
+msgstr "绿色倡议"
+
+#: front-page.php:51
+msgid "Events"
+msgstr "活动"
+
+#: front-page.php:77
+msgid "View All Events"
+msgstr "所有活动"
+
+#: front-page.php:83
+msgid "Projects"
+msgstr "项目"
+
+#: front-page.php:108
+msgid "View All Projects"
+msgstr "所有项目"
+
+#: header.php:18
+msgid "Close"
+msgstr "关闭"
+
+#: header.php:32
+msgid "Main Navigation"
+msgstr ""
+
+#: header.php:46
+msgid "Manifesto"
+msgstr "宣言"
+
+#: page-about.php:47
+msgid "Our Team"
+msgstr "我们的团队"
+
+#: page-about.php:105
+msgid "Past Volunteers & Interns"
+msgstr "以往志愿者及实习生"
+
+#: page-about.php:162
+msgid "Title"
+msgstr "职务"
+
+#: page-about.php:165
+msgid "Position"
+msgstr "职位"
+
+#: page-events.php:51
+msgid "View all past events"
+msgstr "所有往期倡议活动"
+
+#: page-projects.php:49
+msgid "View all past initiatives"
+msgstr "所有往期倡议项目"
+
+#: search.php:9
+msgid "Search results for: %s"
+msgstr "包含%s的搜索结果"
+
+#: searchform.php:3
+msgctxt "placeholder"
+msgid "Search"
+msgstr "搜索"
+
+#: lib/columns.php:57
+msgid "N/A"
+msgstr ""
+
+#. translators: %s: Post Date
+#: lib/helpers.php:6
+msgid "Published on %s"
+msgstr "在%s 日期发表"
+
+#. translators: %s: Post Author
+#: lib/helpers.php:11
+msgid " by %s"
+msgstr " 由%s发表"
+
+#: lib/helpers.php:21
+msgid "Read More"
+msgstr "查看更多"
+
+#: lib/navigation.php:5
+msgid "Main Menu"
+msgstr "主菜单"
+
+#: lib/navigation.php:6
+msgid "Footer Menu"
+msgstr "底部菜单"
+
+#: lib/sidebars.php:6
+msgid "Primary Sidebar"
+msgstr "主侧边栏"
+
+#: lib/sidebars.php:7
+msgid "Add widgets here."
+msgstr "这里加插件。"
+
+#: lib/sidebars.php:25
+msgid "Manifesto Content Area"
+msgstr "“宣言”内容区"
+
+#: lib/sidebars.php:26
+msgid "Update the Manifesto text here."
+msgstr "在这里更新“宣言”文本。"
+
+#: lib/sidebars.php:35
+msgid "Language Switcher"
+msgstr "语言切换开关"
+
+#: lib/sidebars.php:36
+msgid "Insert the language switcher here."
+msgstr "这里加语言切换开关。"
+
+#: template-parts/post/content-event.php:71
+msgid "Event Details"
+msgstr "活动细节"
+
+#: template-parts/post/content-event.php:123
+msgid "View on Baidu Maps"
+msgstr "百度地图"
+
+#: template-parts/post/content-event.php:124
+msgid "View on Google Maps"
+msgstr "谷歌地图"
+
+#: template-parts/post/content-event.php:138,
+#: template-parts/post/content-project.php:50
+msgid "Partners"
+msgstr "合作伙伴"
+
+#: template-parts/post/content-event.php:157,
+#: template-parts/post/content.php:45
+msgid "Tags"
+msgstr "关键词"
+
+#: template-parts/post/content-none.php:1
+msgid "Sorry, no posts matched your criteria."
+msgstr "抱歉，没找到相关内容。"
+
+#: template-parts/single/author.php:2
+msgid "About the author"
+msgstr ""
+
+#: template-parts/single/navigation.php:8
+msgid "Post Navigation"
+msgstr "内容检索"
+
+#: template-parts/single/navigation.php:15
+msgid "Previous Post"
+msgstr "上一篇"
+
+#: template-parts/single/navigation.php:29
+msgid "Next Post"
+msgstr "下一篇"

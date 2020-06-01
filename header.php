@@ -14,7 +14,9 @@
         <div class="col-sm-8 offset-sm-2">
           <div class="m__close">
             <a href="#" class="m__btn"></a>
-            <p>Close</p>
+            <p>
+              <?php esc_html_e( 'Close', '_themename' ); ?>
+            </p>
           </div>
           <?php dynamic_sidebar( 'manifesto' ); ?>
         </div>
@@ -40,15 +42,17 @@
     <nav class="nav__main fixed-top" role="navigation">
       <div class="nav__wrapper">
 
-        <a class="nav__manifesto" href="#">Manifesto</a>
-
-        <a class="nav__logo" href="<?php echo esc_url(home_url('/')); ?>">
-          <img class="hide_mobile" src="<?php bloginfo('stylesheet_directory'); ?>/dist/assets/images/gi-logo.png" alt="<?php esc_html(bloginfo('name')); ?>">
-          <img class="hide_desktop" src="<?php bloginfo('stylesheet_directory'); ?>/dist/assets/images/gi-icon.png" alt="<?php esc_html(bloginfo('name')); ?>">
+        <a class="nav__manifesto" href="#">
+          <?php esc_html_e( 'Manifesto', '_themename' ); ?>
         </a>
 
+        <a class="nav__logo" href="<?php echo esc_url(home_url('/')); ?>">
+          <img class="hide_mobile" src="<?php bloginfo('stylesheet_directory'); ?>/dist/assets/images/gi-logo-2.png" alt="<?php esc_html(bloginfo('name')); ?>">
+          <img class="hide_desktop" src="<?php bloginfo('stylesheet_directory'); ?>/dist/assets/images/gi-icon.png" alt="<?php esc_html(bloginfo('name')); ?>">
+        </a>
+        <!--
         <a class="nav__link" href="https://www.seedsofchange.me/" target="_blank" rel="noopener noreferrer">seedsofchange.me</a>
-
+        -->
         <div class="nav__search">
           <?php get_search_form(true); ?>
         </div>

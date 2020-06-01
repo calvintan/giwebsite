@@ -72,9 +72,9 @@
                 </p>
                 <?php foreach ($object as $key => $value) : ?>
                   <?php if($value) { ?>
-                  <p class="team-member__<?php echo $key; ?>">
+                  <div class="team-member__<?php echo $key; ?>">
                     <?php echo $value; ?>
-                  </p>
+                  </div>
                   <?php } ?>
                 <?php endforeach;?>
               </div>
@@ -106,35 +106,34 @@
           </h2>
         </header>
   
-        <div class="row">
-          <?php while( $query->have_posts() ) : $query->the_post(); ?>
+        <?php while( $query->have_posts() ) : $query->the_post(); ?>
 
-          <?php
-            // Start the output buffer
-            ob_start();
-            
-            // Get the first letter of the post title    
-            $firstLetter = substr(get_the_title(), 0, 1);
-            
-            // If this is the first instance of this letter, add it to the list.    
-            if (! isset($alphabet[$firstLetter])) {
-              $alphabet[$firstLetter] = [];
-            }
-          ?>
+        <?php
+          // Start the output buffer
+          ob_start();
           
-          <li><?php the_title(); ?></li>
+          // Get the first letter of the post title    
+          $firstLetter = substr(get_the_title(), 0, 1);
+          
+          // If this is the first instance of this letter, add it to the list.    
+          if (! isset($alphabet[$firstLetter])) {
+            $alphabet[$firstLetter] = [];
+          }
+        ?>
+        
+        <li><?php the_title(); ?></li>
 
-          <?php
-            $alphabet[$firstLetter][] = ob_get_contents();
-            ob_end_clean();
-          ?>
+        <?php
+          $alphabet[$firstLetter][] = ob_get_contents();
+          ob_end_clean();
+        ?>
 
-          <?php endwhile; ?>
-        </div>
+        <?php endwhile; ?>
       </div>
       <?php wp_reset_postdata(); ?>
     <?php endif; ?>
 
+    <?php ksort($alphabet); ?>
     <ul class="glossary">
       <?php foreach ($alphabet as $letter => $items) : ?>
         <li>
@@ -163,7 +162,7 @@
                 <p class="modal-pos">Position</p>
               </div>
               <div class="col-md-8">
-                <p class="modal-why"></p>
+                <div class="modal-why"></div>
                 <ul class="modal-social">
                   <li class="modal-email"></li>
                   <li class="modal-website"></li>

@@ -3,7 +3,7 @@
 function _themename_post_meta() {
   /* translators: %s: Post Date */
   printf(
-    esc_html__('Posted on %s', '_themename'),
+    esc_html__('Published on %s', '_themename'),
     '<a href="' . esc_url(get_permalink()) . '"><time datetime="' . esc_attr(get_the_date('c')) . '">' . esc_html(get_the_date()) . '</time></a>'
   );
   /* translators: %s: Post Author */
@@ -35,11 +35,22 @@ function get_excerpt() {
   $excerpt = preg_replace(" ([.*?])",'',$excerpt);
   $excerpt = strip_shortcodes($excerpt);
   $excerpt = strip_tags($excerpt);
-  $excerpt = substr($excerpt, 0, 125);
+  $excerpt = substr($excerpt, 0, 135);
   $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
   $excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt));
   $excerpt = $excerpt.'... <p class="read-more-link"><a href="'.get_the_permalink().'">Read more</a></p>';
   return $excerpt;
+}
+
+function short_title($title) {
+  $title_length = strlen($title);
+
+  if ($title_length > 52) {
+    $new_title = substr($title, 0, 52) . '...';
+    return $new_title;
+  } else {
+    return $title;
+  }
 }
 
 function share_buttons() {
@@ -85,5 +96,16 @@ function query_post_type($query) {
 	}
 }
 add_filter('pre_get_posts', 'query_post_type');
+
+// Page Slug Body Class
+function add_slug_body_class( $classes ) {
+  global $post;
+  if ( isset( $post ) ) {
+    $classes[] = $post->post_type . '-' . $post->post_name;
+  }
+  return $classes;
+}
+
+add_filter( 'body_class', 'add_slug_body_class' );
 
 ?>

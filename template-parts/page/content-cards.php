@@ -10,16 +10,18 @@
 
     <?php if('event' == get_post_type()) { ?>
       <?php
+        $start_time = get_field('event_start_time');
+        $end_time = get_field('event_end_time');
         $date_string = get_field('event_date');
         $date = DateTime::createFromFormat('d/m/Y', $date_string);
       ?>
       <div class="c-post__card-info">
         <ul>
           <li>
-            <?php echo $date->format('j M Y'); ?>,
+            <?php echo $date->format('j M Y'); ?>
           </li>
           <li>
-            <?php echo $date->format('l'); ?>
+            <?php echo date("H:i", strtotime($start_time)) ?> - <?php echo date("H:i", strtotime($end_time)) ?>
           </li>
         </ul>
       </div>
@@ -27,7 +29,10 @@
 
     <div class="c-post__card-desc">
       <h3 class="c-post__title">
-        <?php the_title();?>
+        <?php
+          $title = get_the_title();
+          echo short_title($title);
+        ?>
       </h3>
       <p><?php echo get_excerpt(); ?></p>
     </div>

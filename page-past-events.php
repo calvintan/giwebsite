@@ -19,13 +19,12 @@
         $date_args = array(
           'post_type'   => 'event',
           'meta_key' => 'event_date',
-          'posts_per_page' => -1,
           'orderby' => 'meta_value_num',
           'order' => 'DESC',
           'meta_query'=> array(
               array(
                 'key' => 'event_date',
-                'compare' => '>',
+                'compare' => '<',
                 'value' => date("Y-m-d"),
                 'type' => 'DATE'
               )
@@ -44,12 +43,6 @@
       <?php } else { ?>
         <?php get_template_part('template-parts/post/content', 'none'); ?>
       <?php } ?>
-
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <a class="past-events-link" href="<?php echo esc_url( get_permalink( get_page_by_title( 'Past Events' ) ) ); ?>"><?php esc_html_e( 'View all past events', '_themename' ); ?></a>
-      </div>
     </div>
   </div>
 </main>

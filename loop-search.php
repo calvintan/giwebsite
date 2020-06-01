@@ -5,7 +5,6 @@
     <?php get_template_part('template-parts/page/content', 'cards-default'); ?>
     
   <?php } ?>
-  <?php the_posts_pagination(); ?>
 <?php } else { ?>
   <?php get_template_part('template-parts/post/content', 'none'); ?>
 <?php } ?>

@@ -36,7 +36,7 @@
   function add_event_acf_columns ( $columns ) {
     return array_merge ( $columns, array ( 
       'photo' => __ ( 'Photo' ),
-      'event_date' => __ ( 'Date' ),
+      'event_date' => __ ( 'Event Date' ),
       'event_start_time' => __ ( 'Start Time' ),
       'event_end_time'   => __ ( 'End Time' ) 
     ) );
@@ -81,7 +81,7 @@
             <label>
                 <span class="title">Event Date</span>
                 <span class="input-text-wrap">
-                    <input type="text" name="event_date" class="gieventdate value="">
+                  <input type="text" name="event_date" class="gieventdate value="" placeholder="YYYYMMDD">
                 </span>
             </label>
         </div>

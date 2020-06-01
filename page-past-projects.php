@@ -15,23 +15,22 @@
         </div>
       </div>
 
-      <?php
-        $date_args = array(
-          'post_type'   => 'event',
-          'meta_key' => 'event_date',
-          'posts_per_page' => -1,
-          'orderby' => 'meta_value_num',
+      <?php 
+        $args = array( 
+          'post_type' => 'project',
+          'meta_key'  => 'project_end_date',
+          'orderby' => 'meta_value_num', 
           'order' => 'DESC',
           'meta_query'=> array(
               array(
-                'key' => 'event_date',
-                'compare' => '>',
+                'key' => 'project_end_date',
+                'compare' => '<',
                 'value' => date("Y-m-d"),
                 'type' => 'DATE'
               )
           ),
         );
-        $the_query = new WP_Query( $date_args );
+        $the_query = new WP_Query( $args ); 
       ?>
 
       <?php if($the_query->have_posts()) { ?>
@@ -43,15 +42,9 @@
         <?php wp_reset_postdata(); ?>
       <?php } else { ?>
         <?php get_template_part('template-parts/post/content', 'none'); ?>
-      <?php } ?>
-
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <a class="past-events-link" href="<?php echo esc_url( get_permalink( get_page_by_title( 'Past Events' ) ) ); ?>"><?php esc_html_e( 'View all past events', '_themename' ); ?></a>
-      </div>
+      <?php } ?>       
     </div>
   </div>
 </main>
-
+    
 <?php get_footer(); ?>

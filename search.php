@@ -14,6 +14,7 @@
     <div class="row">
       <?php get_template_part('loop', 'search'); ?>
     </div>
+    <?php the_posts_pagination(); ?>
   </div>
 </main>
 
