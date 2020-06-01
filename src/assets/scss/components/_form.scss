@@ -1,17 +1,15 @@
 .wpcf7 {
   text-transform: uppercase;
 
+  input[type="radio"],
   input[type="checkbox"] {
-    margin-right: 0.5rem;
-  }
-
-  input[type="radio"] {
     display: none;
     visibility: hidden;
     position: relative;
   }
 
-  input[type="radio"] + span:before {
+  input[type="radio"] + span:before,
+  input[type="checkbox"] + span:before {
     content: "";
     position: relative;
     display: inline-block;
@@ -26,7 +24,8 @@
     top: -2px;
   }
 
-  input[type="radio"]:checked + span:before {
+  input[type="radio"]:checked + span:before,
+  input[type="checkbox"]:checked + span:before {
     background: #000;
   }
 }

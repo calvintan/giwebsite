@@ -1,24 +1,29 @@
+<?php
+  $start = get_field( "project_start_date" );
+  $end = get_field( "project_end_date" );
+  $startDate = DateTime::createFromFormat('d/m/Y', $start);
+  $endDate = DateTime::createFromFormat('d/m/Y', $end);
+?>
+
 <article <?php post_class('c-post mb-4'); ?>>
   <div class="row">
     <div class="col-md-12">
-      <header class="c-post__header d-flex justify-content-between">
+      <header class="c-post__header">
         <h1 class="c-post__single-title">
           <?php the_title();?>
         </h1>
-
-        <div class="project-date">
-          <p>
-            <?php the_field('project_start_date'); ?> –
-            <?php the_field('project_end_date'); ?>
-          </p>
+        <div class="flex-items">
+          <div class="project-date">
+            <p><?php echo $startDate->format('d F Y'); ?> - <?php echo $endDate->format('d F Y'); ?></p>
+          </div>
+          <?php share_buttons(); ?>
         </div>
       </header>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-md-8 offset-md-4">
-      <?php share_buttons(); ?>
+    <div class="col-md-12">
       <?php if(get_the_post_thumbnail() !== '') { ?>
         <div class="c-post__thumbnail">
           <?php the_post_thumbnail('large'); ?>
@@ -26,39 +31,9 @@
       <?php } ?>
     </div>
   </div>
-
-  <?php if(get_field('project_subtitle_one') && get_field('project_content_one')): ?>
-  <div class="row mt-4">
-    <div class="col-md-4">
-      <div class="project-subtitle">
-        <?php the_field('project_subtitle_one'); ?>
-      </div>
-    </div>
-    <div class="col-md-8">
-      <div class="project-content">
-        <?php the_field('project_content_one'); ?>
-      </div>
-    </div>
-  </div>
-  <?php endif; ?>
-
-  <?php if(get_field('project_subtitle_two') && get_field('project_content_two')): ?>
-  <div class="row mt-4">
-    <div class="col-md-4">
-      <div class="project-subtitle">
-        <?php the_field('project_subtitle_two'); ?>
-      </div>
-    </div>
-    <div class="col-md-8">
-      <div class="project-content">
-        <?php the_field('project_content_two'); ?>
-      </div>
-    </div>
-  </div>
-  <?php endif; ?>
   
-  <div class="row mt-4">
-    <div class="col-md-8 offset-md-4">
+  <div class="row">
+    <div class="col-md-12">
       <div class="c-post__inner">
         <div class="c-post__content">
           <?php the_content(); ?>
@@ -71,9 +46,7 @@
   <?php if( $partners ): ?>
   <div class="row mt-4">
     <div class="col-md-4">
-      <div class="project-subtitle">
-        Partners
-      </div>
+      <h4>Partners</h4>
     </div>
     <div class="col-md-8">
       <div class="project-partners">
@@ -83,14 +56,6 @@
           </a>
         <?php endforeach; ?>
       </div>
-    </div>
-  </div>
-  <?php endif; ?>
-
-  <?php if( get_field('project_press') ): ?>
-  <div class="row mt-4">
-    <div class="col-md-8 offset-md-4">
-      <?php the_field('project_press'); ?>
     </div>
   </div>
   <?php endif; ?>

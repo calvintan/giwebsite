@@ -19,6 +19,7 @@
 
   .textwidget {
     font-size: 0.875rem;
+    line-height: 1.7;
   }
 
   @media (max-width: 767px) {
@@ -112,4 +113,9 @@
       flex-grow: 1;
     }
   }
+}
+
+#qrModal .modal-body img {
+  max-width: 100%;
+  height: auto;
 }
