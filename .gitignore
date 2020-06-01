@@ -3,9 +3,7 @@
 Thumbs.db
 
 # folders that are automatically generated
-dist/assets/qrcode.min.js
-dist/assets/fonts/
-dist/assets/images/
+dist
 packaged
 
 # ignore node dependency directories
