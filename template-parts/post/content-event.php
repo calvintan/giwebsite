@@ -5,45 +5,48 @@
         <h1 class="c-post__single-title">
           <?php the_title();?>
         </h1>
+        <div class="flex-items">
+          <div class="project-date">
+            <?php if('event' == get_post_type()) { ?>
+            <?php
+              $start_time = get_field('event_start_time');
+              $end_time = get_field('event_end_time');
+              $location = get_field('event_location');
+              
+              $date_string = get_field('event_date');
+              $date = DateTime::createFromFormat('d/m/Y', $date_string);
+
+              $event_url = get_field('event_qr_code');
+              $partners = get_field('event_partners');
+            ?>
+            <div class="c-post__event-info">
+              <ul>
+                <li>
+                  <?php echo $date->format('j F Y'); ?>
+                </li>
+                <li>
+                  <?php echo date("H:i", strtotime($start_time)) ?> - <?php echo date("H:i", strtotime($end_time)) ?>
+                </li>
+                <li>
+                  <?php if( $location ): ?>
+                    <?php foreach( $location as $l ): ?>
+                      <?php echo get_the_title( $l->ID ); ?>, 
+                      <?php echo get_field('location_city', $l->ID ); ?>
+                    <?php endforeach; ?>
+                  <?php endif; ?>
+                </li>
+              </ul>
+            </div>
+            <?php } ?>
+          </div>
+          <?php share_buttons(); ?>
+        </div>
       </header>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-md-4">
-      <?php if('event' == get_post_type()) { ?>
-        <?php
-          $start_time = get_field('event_start_time');
-          $end_time = get_field('event_end_time');
-          $location = get_field('event_location');
-          
-          $date_string = get_field('event_date');
-          $date = DateTime::createFromFormat('d/m/Y', $date_string);
-
-          $event_url = get_field('event_qr_code');
-          $partners = get_field('event_partners');
-        ?>
-        <div class="c-post__event-info">
-          <ul>
-            <li>
-              <?php echo $date->format('j M Y'); ?>
-            </li>
-            <li>
-              <?php echo $start_time; ?> – <?php echo $end_time; ?>
-            </li>
-            <li>
-              <?php if( $location ): ?>
-                <?php foreach( $location as $l ): ?>
-                  <?php echo get_the_title( $l->ID ); ?>
-                <?php endforeach; ?>
-              <?php endif; ?>
-            </li>
-          </ul>
-        </div>
-      <?php } ?>
-    </div>
-    <div class="col-md-8">
-      <?php share_buttons(); ?>
+    <div class="col-md-12">
       <?php if(get_the_post_thumbnail() !== '') { ?>
         <div class="c-post__thumbnail">
           <?php the_post_thumbnail('large'); ?>
@@ -51,39 +54,9 @@
       <?php } ?>
     </div>
   </div>
-
-  <?php if(get_field('event_subtitle_one') && get_field('event_content_one')): ?>
-  <div class="row mt-4">
-    <div class="col-md-4">
-      <div class="project-subtitle">
-        <?php the_field('event_subtitle_one'); ?>
-      </div>
-    </div>
-    <div class="col-md-8">
-      <div class="project-content">
-        <?php the_field('event_content_one'); ?>
-      </div>
-    </div>
-  </div>
-  <?php endif; ?>
-
-  <?php if(get_field('event_subtitle_two') && get_field('event_content_two')): ?>
-  <div class="row mt-4">
-    <div class="col-md-4">
-      <div class="project-subtitle">
-        <?php the_field('event_subtitle_two'); ?>
-      </div>
-    </div>
-    <div class="col-md-8">
-      <div class="project-content">
-        <?php the_field('event_content_two'); ?>
-      </div>
-    </div>
-  </div>
-  <?php endif; ?>
   
-  <div class="row mt-4">
-    <div class="col-md-8 offset-md-4">
+  <div class="row">
+    <div class="col-md-12">
       <div class="c-post__inner">
         <div class="c-post__content">
           <?php the_content(); ?>
@@ -95,9 +68,7 @@
   <?php if ($location): ?>
   <div class="row mt-4">
     <div class="col-md-4">
-      <div class="project-subtitle">
-        Event Details
-      </div>
+      <h4>Event Details</h4>
     </div>
     <div class="col-md-8">
       <div class="d-flex event-section">
@@ -164,9 +135,7 @@
   <?php if( $partners ): ?>
   <div class="row mt-4">
     <div class="col-md-4">
-      <div class="project-subtitle">
-        Partners
-      </div>
+      <h4>Partners</h4>
     </div>
     <div class="col-md-8">
       <div class="project-partners">
@@ -180,16 +149,19 @@
   </div>
   <?php endif; ?>
 
-  <?php if(is_single()) { ?>
-    <footer class="c-post__footer">
-      <?php
-      if(has_tag()) {
-          echo '<div class="c-post__tags">';
-          $tags_list = get_the_tag_list( '<ul><li>', '</li><li>', '</li></ul>' );
-          echo $tags_list;
-          echo "</div>";
-      }
-      ?>
-    </footer>
-  <?php } ?>
+  <?php if( has_tag() ): ?>
+  <div class="row mt-4">
+    <div class="col-md-8 offset-md-4">
+      <footer class="c-post__footer">
+        <div class="c-post__tags">
+          <h4>Tags</h4>
+          <?php
+            $tags_list = get_the_tag_list( '<ul><li>', '</li><li>', '</li></ul>' );
+            echo $tags_list;
+          ?>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <?php endif; ?>
 </article>
