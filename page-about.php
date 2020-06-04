@@ -44,7 +44,7 @@
       <div class="team">
         <header class="page__header">
           <h2 class="page__subtitle">
-            Our Team
+            <?php esc_html_e( 'Our Team', '_themename' ); ?>
           </h2>
         </header>
   
@@ -102,7 +102,7 @@
       <div class="volunteers">
         <header class="page__header">
           <h2 class="page__subtitle">
-            Past Volunteers & Interns
+            <?php esc_html_e( 'Past Volunteers & Interns', '_themename' ); ?>
           </h2>
         </header>
   
@@ -158,8 +158,12 @@
           <div class="container-fluid">
             <div class="row">
               <div class="col-md-4">
-                <h5 class="modal-title" id="modalLabel">Title</h5>
-                <p class="modal-pos">Position</p>
+                <h5 class="modal-title">
+                  <?php esc_html_e( 'Title', '_themename' ); ?> 
+                </h5>
+                <p class="modal-pos">
+                  <?php esc_html_e( 'Position', '_themename' ); ?> 
+                </p>
               </div>
               <div class="col-md-8">
                 <div class="modal-why"></div>
