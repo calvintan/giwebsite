@@ -101,11 +101,12 @@ body.show-nav {
   }
 }
 
-#menu-main-menu {
+#menu-main-menu,
+#menu-main-menu-cn {
   list-style: none;
   padding: 0;
   text-transform: uppercase;
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   line-height: 1.2;
   margin: 4rem 0;
 
