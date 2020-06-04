@@ -38,47 +38,6 @@
   <section class="homepage-top">
     <div class="container">
       <?php get_template_part('loop', 'page'); ?>
-      <!-- <div class="row">
-        <div class="col-md-4">
-          <h3>What we do</h3>
-        </div>
-        <div class="col-md-8">
-          <h2>We deliver programs and initiatives for organisations on long-term value creation to maximise their positive environmental impact.</h2>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-          <span class="hp-top-icon">
-            <img src="<?php bloginfo('stylesheet_directory'); ?>/dist/assets/images/home-top-1.svg" alt="">
-          </span>
-        </div>
-        <div class="col-md-8">
-          <h3>Waste &amp; Recycling</h3>
-          <p>We are helping both individuals and businesses to reduce and optimise their waste and take responsibility for their consumption by connecting them to smart, sustainable, and data-driven waste and recycling solutions.</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4 order-md-last">
-          <span class="hp-top-icon">
-            <img src="<?php bloginfo('stylesheet_directory'); ?>/dist/assets/images/home-top-2.svg" alt="">
-          </span>
-        </div>
-        <div class="col-md-8 order-md-first">
-          <h3>Thought Leadership</h3>
-          <p>We are helping companies to be 'eco-leaders' and environmentally aware for their employees and customers by facilitating activities and programs that change behaviours and help inform sustainable business decisions.</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-          <span class="hp-top-icon">
-            <img src="<?php bloginfo('stylesheet_directory'); ?>/dist/assets/images/home-top-3.svg" alt="">
-          </span>
-        </div>
-        <div class="col-md-8">
-          <h3>Social Business Support</h3>
-          <p>We are assisting social entrepreneurs and businesses increase their market presence by enabling the proliferation and commercialisation of sustainable solutions, technologies and platforms to create scalable impact.</p>
-        </div>
-      </div> -->
     </div>
   </section>
   <section class="homepage-bot">
