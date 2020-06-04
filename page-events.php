@@ -44,11 +44,20 @@
       <?php } else { ?>
         <?php get_template_part('template-parts/post/content', 'none'); ?>
       <?php } ?>
-
     </div>
+
+    <?php
+      $past = get_page_by_title( 'Past Events' );
+      $pastEn = pll_get_post($past->ID, 'en');
+      $pastZh = pll_get_post($past->ID, 'zh');
+    ?>
     <div class="row">
       <div class="col-md-12">
-        <a class="past-events-link" href="<?php echo esc_url( get_permalink( get_page_by_title( 'Past Events' ) ) ); ?>"><?php esc_html_e( 'View all past events', '_themename' ); ?></a>
+        <?php if(pll_current_language() == 'en') { ?>
+          <a class="past-events-link" href="<?php echo esc_url( get_permalink( $pastEn ) ); ?>"><?php esc_html_e( 'View all past events', '_themename' ); ?></a>
+        <?php } else { ?>
+          <a class="past-events-link" href="<?php echo esc_url( get_permalink( $pastZh ) ); ?>"><?php esc_html_e( 'View all past events', '_themename' ); ?></a>
+        <?php } ?>
       </div>
     </div>
   </div>
