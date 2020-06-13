@@ -27,6 +27,20 @@
       </div>
     <?php } ?>
 
+    <?php if('post' == get_post_type()) { ?>
+      <div class="c-post__card-info">
+        <ul>
+          <li>
+            <?php if(get_the_term_list($post->ID, 'topic')) {
+              echo strip_tags(get_the_term_list($post->ID, 'topic'));
+            } else {
+              echo 'Uncategorised';
+            } ?>
+          </li>
+        </ul>
+      </div>
+    <?php } ?>
+
     <div class="c-post__card-desc">
       <h3 class="c-post__title">
         <?php
