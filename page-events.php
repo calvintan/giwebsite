@@ -56,6 +56,7 @@
           $wp_query = NULL;
           $wp_query = $temp_query;
         ?>
+        
       <?php } else { ?>
         <?php get_template_part('template-parts/post/content', 'none'); ?>
       <?php } ?>
