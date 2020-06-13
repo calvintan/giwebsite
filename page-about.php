@@ -7,83 +7,140 @@
     <?php while(have_posts()) { ?>
       <?php the_post(); ?>
 
-    <div class="row">
-      <div class="col-md-12">
-        <header class="page__header">
-          <h1 class="page__title">
-            <?php the_title(); ?>
-          </h1>
-        </header>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-8">
-        <div class="page__content">
-          <?php the_content(); ?>
+      <div class="row">
+        <div class="col-md-12">
+          <header class="page__header">
+            <h1 class="page__title">
+              <?php the_title(); ?>
+            </h1>
+          </header>
         </div>
       </div>
-    </div>
+
+      <div class="row">
+        <div class="col-md-8">
+          <div class="page__content">
+            <?php the_content(); ?>
+          </div>
+        </div>
+      </div>
 
     <?php } ?>
   <?php } ?>
+    
+  <?php 
+    $args = array( 
+      'post_type' => 'member',
+      'posts_per_page' => -1,
+      'meta_key'  => 'member_type',
+      'meta_value'	=> 'Current Team',
+      'order' => 'ASC',
+      'orderby' => 'date'
+    );
+    $team_query = new WP_Query( $args ); 
+  ?>
 
-    <?php 
-      $args = array( 
-        'post_type' => 'member',
-        'posts_per_page' => -1,
-        'meta_key'  => 'member_type',
-        'meta_value'	=> 'Current Team',
-        'order' => 'ASC',
-        'orderby' => 'date'
-      );
-      $team_query = new WP_Query( $args ); 
-    ?>
+  <?php if( $team_query->have_posts() ): ?>
+    <div class="team">
+      <header class="page__header">
+        <h2 class="page__subtitle">
+          <?php esc_html_e( 'Our Team', '_themename' ); ?>
+        </h2>
+      </header>
 
-    <?php if( $team_query->have_posts() ): ?>
-      <div class="team">
-        <header class="page__header">
-          <h2 class="page__subtitle">
-            <?php esc_html_e( 'Our Team', '_themename' ); ?>
-          </h2>
-        </header>
-  
-        <div class="row">
-          <?php while( $team_query->have_posts() ) : $team_query->the_post(); ?>
-            <?php
-              $object = (object) [
-                'pos' => get_field( "member_position" ),
-                'why' => get_field( "member_reason" ),
-                'email' => get_field( "member_email" ),
-                'website' => get_field( "member_website" ),
-                'facebook' => get_field( "member_facebook" ),
-                'linkedin' => get_field( "member_linkedin" ),
-                'weibo' => get_field( "member_weibo" )
-              ];
-            ?>
+      <div class="row">
+        <?php while( $team_query->have_posts() ) : $team_query->the_post(); ?>
+          <?php
+            $object = (object) [
+              'pos' => get_field( "member_position" ),
+              'why' => get_field( "member_reason" ),
+              'email' => get_field( "member_email" ),
+              'website' => get_field( "member_website" ),
+              'facebook' => get_field( "member_facebook" ),
+              'linkedin' => get_field( "member_linkedin" ),
+              'weibo' => get_field( "member_weibo" )
+            ];
+          ?>
 
-            <div class="col-md-3 col-6">
-              <div class="team-member">
-                <a href="#" data-toggle="modal" data-target="#teamModal">
-                  <?php the_post_thumbnail('thumbnail'); ?>
-                </a>
-                <p class="team-member__name">
-                  <?php the_title(); ?>
-                </p>
-                <?php foreach ($object as $key => $value) : ?>
-                  <?php if($value) { ?>
-                  <div class="team-member__<?php echo $key; ?>">
-                    <?php echo $value; ?>
-                  </div>
-                  <?php } ?>
-                <?php endforeach;?>
-              </div>
+          <div class="col-md-3 col-6">
+            <div class="team-member">
+              <a href="#" data-toggle="modal" data-target="#teamModal">
+                <?php the_post_thumbnail('thumbnail'); ?>
+              </a>
+              <p class="team-member__name">
+                <?php the_title(); ?>
+              </p>
+              <?php foreach ($object as $key => $value) : ?>
+                <?php if($value) { ?>
+                <div class="team-member__<?php echo $key; ?>">
+                  <?php echo $value; ?>
+                </div>
+                <?php } ?>
+              <?php endforeach;?>
             </div>
-          <?php endwhile; ?>
-        </div>
+          </div>
+        <?php endwhile; ?>
       </div>
-    <?php endif; ?>
-    <?php wp_reset_query(); ?>
+    </div>
+  <?php endif; ?>
+  <?php wp_reset_query(); ?>
+
+  <?php 
+    $args = array( 
+      'post_type' => 'member',
+      'posts_per_page' => -1,
+      'meta_key'  => 'member_type',
+      'meta_value'	=> 'Advisory Board',
+      'order' => 'ASC',
+      'orderby' => 'date'
+    );
+    $team_query = new WP_Query( $args ); 
+  ?>
+
+  <?php if( $team_query->have_posts() ): ?>
+    <div class="team">
+      <header class="page__header">
+        <h2 class="page__subtitle">
+          <?php esc_html_e( 'Advisors', '_themename' ); ?>
+        </h2>
+      </header>
+
+      <div class="row">
+        <?php while( $team_query->have_posts() ) : $team_query->the_post(); ?>
+          <?php
+            $object = (object) [
+              'pos' => get_field( "member_position" ),
+              'why' => get_field( "member_reason" ),
+              'email' => get_field( "member_email" ),
+              'website' => get_field( "member_website" ),
+              'facebook' => get_field( "member_facebook" ),
+              'linkedin' => get_field( "member_linkedin" ),
+              'weibo' => get_field( "member_weibo" )
+            ];
+          ?>
+
+          <div class="col-md-3 col-6">
+            <div class="team-member">
+              <a href="#" data-toggle="modal" data-target="#teamModal">
+                <?php the_post_thumbnail('thumbnail'); ?>
+              </a>
+              <p class="team-member__name">
+                <?php the_title(); ?>
+              </p>
+              <?php foreach ($object as $key => $value) : ?>
+                <?php if($value) { ?>
+                <div class="team-member__<?php echo $key; ?>">
+                  <?php echo $value; ?>
+                </div>
+                <?php } ?>
+              <?php endforeach;?>
+            </div>
+          </div>
+        <?php endwhile; ?>
+      </div>
+    </div>
+  <?php endif; ?>
+  <?php wp_reset_query(); ?>
 
     <?php $alphabet = []; ?>
     <?php 
