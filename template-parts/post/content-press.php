@@ -18,7 +18,7 @@
           <?php the_title(); ?>
         </li>
       </ul>
-      <a href="<?php the_field('press_link'); ?>">
+      <a href="<?php the_field('press_link'); ?>" target="_blank" rel="noopener noreferrer">
         <?php the_content(); ?>
       </a>
     </div>
