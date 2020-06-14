@@ -9,7 +9,25 @@
             <?php single_post_title(); ?>
           </h1>
 
-          <?php dynamic_sidebar( 'news_sidebar' ); ?>
+          <?php
+            $categories = get_terms( 'category', array(
+                'order' => 'ASC',
+                'hide_empty' => 0
+            ) );
+          ?>
+
+          <div id="dd" class="dropdown-wrapper" tabindex="1">
+            <span>Filter</span>
+            <ul class="dropdown-category">
+              <?php foreach($categories as $category) : ?>
+                <li>
+                  <a href="<?php echo esc_url(get_term_link($category)) ?>">
+                    <?php echo $category->name ?>
+                  </a>
+                </li>
+              <?php endforeach; ?>
+            </ul>
+          </div>
         </header>
       </div>
     </div>

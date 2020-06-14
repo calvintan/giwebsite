@@ -4,38 +4,30 @@ import "../../../node_modules/bootstrap/dist/js/bootstrap.bundle";
 import "../../../node_modules/jquery.ripples/dist/jquery.ripples-min";
 
 $(document).ready(() => {
-  $(".nav__btn").click(function() {
+  $(".nav__btn").click(function () {
     $(this).toggleClass("animate");
 
     if ($("body").hasClass("show-nav")) {
-      $("body")
-        .removeClass("show-nav")
-        .addClass("hide-nav");
+      $("body").removeClass("show-nav").addClass("hide-nav");
 
-      setTimeout(function() {
+      setTimeout(function () {
         $("body").removeClass("hide-nav");
       }, 500);
     } else {
-      $("body")
-        .removeClass("hide-nav")
-        .addClass("show-nav");
+      $("body").removeClass("hide-nav").addClass("show-nav");
     }
     return false;
   });
 
-  $(".nav__manifesto, .m__close").click(function() {
+  $(".nav__manifesto, .m__close").click(function () {
     if ($("body").hasClass("show-manifesto")) {
-      $("body")
-        .removeClass("show-manifesto")
-        .addClass("hide-manifesto");
+      $("body").removeClass("show-manifesto").addClass("hide-manifesto");
 
-      setTimeout(function() {
+      setTimeout(function () {
         $("body").removeClass("hide-manifesto");
       }, 500);
     } else {
-      $("body")
-        .removeClass("hide-manifesto")
-        .addClass("show-manifesto");
+      $("body").removeClass("hide-manifesto").addClass("show-manifesto");
     }
     return false;
   });
@@ -43,10 +35,10 @@ $(document).ready(() => {
   $("#carousel-homepage").ripples({
     resolution: 1024,
     // dropRadius: 20,
-    perturbance: 0.01
+    perturbance: 0.01,
   });
 
-  $(function() {
+  $(function () {
     var $event_url = $("#event_url");
     if (!$event_url.length) return;
 
@@ -60,27 +52,17 @@ $(document).ready(() => {
     new QRCode(document.getElementById("qrcode"), $event_url);
   });
 
-  $("#teamModal").on("show.bs.modal", function(event) {
+  $("#teamModal").on("show.bs.modal", function (event) {
     // Get the button that triggered the modal
     const button = $(event.relatedTarget);
 
     // Reset values
     let teamObj = null;
-    $(this)
-      .find(".modal-email")
-      .html("");
-    $(this)
-      .find(".modal-website")
-      .html("");
-    $(this)
-      .find(".modal-facebook")
-      .html("");
-    $(this)
-      .find(".modal-linkedin")
-      .html("");
-    $(this)
-      .find(".modal-weibo")
-      .html("");
+    $(this).find(".modal-email").html("");
+    $(this).find(".modal-website").html("");
+    $(this).find(".modal-facebook").html("");
+    $(this).find(".modal-linkedin").html("");
+    $(this).find(".modal-weibo").html("");
 
     teamObj = {
       name: button.siblings(".team-member__name").text(),
@@ -90,25 +72,19 @@ $(document).ready(() => {
       web: $.trim(button.siblings(".team-member__website").text()),
       fb: $.trim(button.siblings(".team-member__facebook").text()),
       in: $.trim(button.siblings(".team-member__linkedin").text()),
-      wb: $.trim(button.siblings(".team-member__weibo").text())
+      wb: $.trim(button.siblings(".team-member__weibo").text()),
     };
 
     for (let key of Object.keys(teamObj)) {
       let val = teamObj[key];
       if (key === "name" && val) {
-        $(this)
-          .find(".modal-title")
-          .text(teamObj.name);
+        $(this).find(".modal-title").text(teamObj.name);
       }
       if (key === "pos" && val) {
-        $(this)
-          .find(".modal-pos")
-          .text(teamObj.pos);
+        $(this).find(".modal-pos").text(teamObj.pos);
       }
       if (key === "why" && val) {
-        $(this)
-          .find(".modal-why")
-          .text(teamObj.why);
+        $(this).find(".modal-why").text(teamObj.why);
       }
       if (key === "email" && val) {
         $(this)
@@ -148,7 +124,7 @@ $(document).ready(() => {
     }
   });
 
-  $(".share-button").click(function(e) {
+  $(".share-button").click(function (e) {
     e.preventDefault();
     let link = $(this).attr("href");
     window.open(link, "", "width=600,height=300");
@@ -160,7 +136,7 @@ $(document).ready(() => {
   const form_found = $("#form-found");
   const form_found_other = $("#form-found-other");
 
-  form_interest_last.on("click", function() {
+  form_interest_last.on("click", function () {
     if ($(this).is(":checked")) {
       form_interest_other.show();
     } else {
@@ -168,7 +144,7 @@ $(document).ready(() => {
     }
   });
 
-  form_found.on("click", function() {
+  form_found.on("click", function () {
     let radioText = $('input[name="form-found"]:checked').val();
     if (radioText == "Other") {
       form_found_other.show();
@@ -178,20 +154,40 @@ $(document).ready(() => {
   });
 });
 
-$(document).keyup(function(e) {
+$(document).keyup(function (e) {
   if (e.keyCode == 27) {
     if ($("body").hasClass("show-nav")) {
-      $("body")
-        .removeClass("show-nav")
-        .addClass("hide-nav");
+      $("body").removeClass("show-nav").addClass("hide-nav");
 
-      setTimeout(function() {
+      setTimeout(function () {
         $("body").removeClass("hide-nav");
       }, 500);
     } else {
-      $("body")
-        .removeClass("hide-nav")
-        .addClass("show-nav");
+      $("body").removeClass("hide-nav").addClass("show-nav");
     }
   }
+});
+
+function DropDown(el) {
+  this.dd = el;
+  this.initEvents();
+}
+
+DropDown.prototype = {
+  initEvents: function () {
+    var obj = this;
+
+    obj.dd.on("click", function (event) {
+      $(this).toggleClass("active");
+      event.stopPropagation();
+    });
+  },
+};
+
+$(function () {
+  var dd = new DropDown($("#dd"));
+
+  $(document).click(function () {
+    $(".dropdown-wrapper").removeClass("active");
+  });
 });
