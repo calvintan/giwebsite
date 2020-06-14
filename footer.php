@@ -14,8 +14,8 @@
           <ul class="menu-social">
             <li><a href="https://www.facebook.com/greeninitiatives" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a></li>
             <li><button type="button" data-toggle="modal" data-target="#qrModal"><i class="fab fa-weixin"></i></button></li>
-            <li><a href="#" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></li>
-            <li><a href="http://www.linkedin.com/groups/Green-Drinks-China-3691430?gid=3691430&trk=hb_side_g" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a></li>
+            <li><a href="https://www.instagram.com/green_initiatives/" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://www.linkedin.com/company/greeninitiatives/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a></li>
           </ul>
           <?php dynamic_sidebar( 'footer_four' ); ?>
         </div>
