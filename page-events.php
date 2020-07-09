@@ -27,7 +27,7 @@
           'meta_query'=> array(
               array(
                 'key' => 'event_date',
-                'compare' => '>',
+                'compare' => '>=',
                 'value' => date("Y-m-d"),
                 'type' => 'DATE'
               )
