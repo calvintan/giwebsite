@@ -16,21 +16,31 @@
       </div>
 
       <?php
+        $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
         $date_args = array(
           'post_type'   => 'event',
           'meta_key' => 'event_date',
+          'posts_per_page' => 6,
+          'paged'          => $paged,
           'orderby' => 'meta_value_num',
           'order' => 'DESC',
           'meta_query'=> array(
-              array(
-                'key' => 'event_date',
-                'compare' => '<',
-                'value' => date("Y-m-d"),
-                'type' => 'DATE'
-              )
+            array(
+              'key' => 'event_date',
+              'compare' => '<',
+              'value' => date("Y-m-d"),
+              'type' => 'DATE'
+            )
           ),
         );
-        $the_query = new WP_Query( $date_args );
+        $the_query = new WP_Query($date_args);
+      ?>
+
+      <?php
+        // Pagination fix
+        $temp_query = $wp_query;
+        $wp_query   = NULL;
+        $wp_query   = $the_query;
       ?>
 
       <?php if($the_query->have_posts()) { ?>
@@ -40,6 +50,13 @@
         <?php } ?>
         <?php the_posts_pagination(); ?>
         <?php wp_reset_postdata(); ?>
+
+        <?php
+          // Reset main query object
+          $wp_query = NULL;
+          $wp_query = $temp_query;
+        ?>
+
       <?php } else { ?>
         <?php get_template_part('template-parts/post/content', 'none'); ?>
       <?php } ?>
