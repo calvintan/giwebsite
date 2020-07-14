@@ -46,13 +46,11 @@
           <?php esc_html_e( 'Manifesto', '_themename' ); ?>
         </a>
 
-        <a class="nav__logo" href="<?php echo esc_url(home_url('/')); ?>">
-          <img class="hide_mobile" src="<?php bloginfo('stylesheet_directory'); ?>/dist/assets/images/gi-logo-2.png" alt="<?php esc_html(bloginfo('name')); ?>">
+        <a class="nav__logo" href="<?php echo esc_url(site_url()); ?>">
+          <img class="hide_mobile" src="<?php bloginfo('stylesheet_directory'); ?>/dist/assets/images/gi-logo.png" alt="<?php esc_html(bloginfo('name')); ?>">
           <img class="hide_desktop" src="<?php bloginfo('stylesheet_directory'); ?>/dist/assets/images/gi-icon.png" alt="<?php esc_html(bloginfo('name')); ?>">
         </a>
-        <!--
-        <a class="nav__link" href="https://www.seedsofchange.me/" target="_blank" rel="noopener noreferrer">seedsofchange.me</a>
-        -->
+        
         <div class="nav__search">
           <?php get_search_form(true); ?>
         </div>
