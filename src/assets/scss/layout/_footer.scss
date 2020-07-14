@@ -49,7 +49,7 @@
   }
 }
 
-.mc4wp-form-fields {
+.newsletter-box {
   display: flex;
 
   input[type="email"] {
@@ -70,7 +70,7 @@
     }
   }
 
-  input[type="submit"] {
+  button[type="submit"] {
     border: 0;
     padding: 1px 0.625rem 0;
     font-size: 0.875rem;
@@ -120,4 +120,10 @@
 #qrModal .modal-body img {
   max-width: 100%;
   height: auto;
+}
+
+@media (max-width: 991px) {
+  .footer-column {
+    margin-bottom: 2rem;
+  }
 }

@@ -1,20 +1,30 @@
   <footer class="footer-homepage py-5">
     <div class="container">
       <div class="row">
-        <div class="col-md-3">
+        <div class="footer-column col-lg-3 col-md-6">
           <?php dynamic_sidebar( 'footer_one' ); ?>
         </div>
-        <div class="col-md-3">
+        <div class="footer-column col-lg-3 col-md-6">
           <?php dynamic_sidebar( 'footer_two' ); ?>
         </div>
-        <div class="col-md-3">
+        <div class="footer-column col-lg-3 col-md-6">
           <?php dynamic_sidebar( 'footer_three' ); ?>
+          <div class="newsletter-widget">
+            <h4>Subscribe to Newsletter</h4>
+            <form class="js-cm-form" id="subForm" action="https://www.createsend.com/t/subscribeerror?description=" method="post" data-id="2BE4EF332AA2E32596E38B640E9056197DF7FFCA5CF6FA729E04B09C13DE43B24622D5D5A93478FB469700387FFB27FDCC917FBB16597A326A1F57FBF8DDA72E">
+              <div class="newsletter-box">
+                <input autocomplete="Email" aria-label="Email" class="js-cm-email-input qa-input-email" id="fieldEmail" maxlength="200" name="cm-ydktdut-ydktdut" placeholder="Your email" required="" type="email">
+                <button type="submit">Sign Up</button>
+              </div>
+            </form>
+          </div>
+          <script type="text/javascript" src="https://js.createsend1.com/javascript/copypastesubscribeformlogic.js"></script>
         </div>
-        <div class="col-md-3">
+        <div class="footer-column col-lg-3 col-md-6">
           <ul class="menu-social">
             <li><a href="https://www.facebook.com/greeninitiatives" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a></li>
             <li><button type="button" data-toggle="modal" data-target="#qrModal"><i class="fab fa-weixin"></i></button></li>
-            <li><a href="https://www.instagram.com/green_initiatives/" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://www.instagram.com/green_initiatives/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></li>
             <li><a href="https://www.linkedin.com/company/greeninitiatives/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a></li>
           </ul>
           <?php dynamic_sidebar( 'footer_four' ); ?>
