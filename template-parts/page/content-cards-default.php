@@ -8,6 +8,20 @@
       </div>
     <?php } ?>
 
+    <?php if('post' == get_post_type()) { ?>
+      <div class="c-post__card-info">
+        <ul>
+          <li>
+            <?php
+              $cat = get_the_category();
+              $catname = $cat[0]->name;
+              echo $catname;
+            ?>
+          </li>
+        </ul>
+      </div>
+    <?php } ?>
+
     <div class="c-post__card-desc">
       <h3 class="c-post__title">
         <?php

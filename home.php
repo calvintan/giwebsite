@@ -10,9 +10,9 @@
           </h1>
 
           <?php
-            $categories = get_terms( 'category', array(
+            $categories = get_terms( 'topic', array(
                 'order' => 'ASC',
-                'hide_empty' => 0
+                'hide_empty' => true
             ) );
           ?>
 
